@@ -1,4 +1,601 @@
-{% extends 'app/base.html' %}
-{% block content %}
-    <h1>Hello World!</h1>
+{% extends 'app/base.html' %} {% load static %} {% block content %}
+
+<!--carousel-->
+<section class="s-banner">
+  <div id="carouselBanners" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselBanners"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselBanners"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselBanners"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="{% static 'images/bgGreen01.jpg' %}"
+          class="w-100 item-banner_desktop"
+          alt="imagem banner verde"
+        />
+        <img
+          src="{% static 'images/bgGreenMobile.jpg' %}"
+          class="w-100 item-banner_mobile"
+          alt="imagem banner verde"
+        />
+        <div class="carousel-caption">
+          <img
+            src="{% static 'images/logo.png' %}"
+            class="carousel-itemLogo d-none d-md-block"
+            alt="logo missão verde"
+          />
+          <h2 class="text-green-black">
+            Reciclagem e Educação <br />
+          </h2>
+          <p class="text-black lead">
+            Gincana de coleta seletiva 
+            de recicláveis de fortaleza
+          </p>
+          <a href="/#s-about" class="btn btn-success btn-rounded mt-2">Saiba mais</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="{% static 'images/bgOrange.jpg' %}"
+          class="d-block w-100 item-banner_desktop"
+          alt="banner rankeamento"
+        />
+        <img
+          src="{% static 'images/bgOrangeMobile.jpg' %}"
+          class="w-100 item-banner_mobile"
+          alt="banner rankeamento"
+        />
+        <div class="carousel-caption">
+          <img
+            src="{% static 'images/logo.png' %}"
+            class="carousel-itemLogo d-none d-md-block"
+            alt="logo missão verde"
+          />
+          <h2 class="text-green-black">
+            Confira sua pontuação <br />
+          </h2>
+          <p class="text-black lead">
+            Você já está participando? <br> consulte sua pontuação com o número da sua matrícula
+          </p>
+          <a href="/aluno" class="btn btn-success btn-rounded mt-2">Pontuação aluno</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="{% static 'images/bannerBlue.jpg' %}"
+          class="d-block w-100 item-banner_desktop"
+          alt="banner recicles"
+        />
+        <img
+          src="{% static 'images/bannerBlueMobile.jpg' %}"
+          class="w-100 item-banner_mobile"
+          alt="banner rankeamento"
+        />
+        <div class="carousel-caption">
+          <img
+            src="{% static 'images/logo.png' %}"
+            class="carousel-itemLogo d-none d-md-block"
+            alt="logo missão verde"
+          />
+          <h2 class="text-green-black">
+            Conhece os pontos recicles(Re$) ?<br />
+          </h2>
+          <p class="text-black lead">
+            Pontos recicles, quanto mais você coleta <br>
+            materiais pra reciclagem, mais você ganha
+          </p>
+          <a href="/ecoloja" class="btn btn-success btn-rounded mt-2">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+    <!-- <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselBanners"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselBanners"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button> -->
+  </div>
+</section>
+<!--/carousel-->
+
+<!-- section about -->
+<section id="s-about" class="s-about s-content">
+  <div class="d-flex align-items-center flex-lg-row flex-column-reverse justify-content-center">
+    <div
+      class="s-about_colText d-flex flex-column align-items-center justify-content-center wow bounceInRight"
+    >
+      <div class="s-about_colText--texts">
+        <h1 class="text-green-black h1-pageInit">Missão Verde</h1>
+        <p class="text-orange mb-4 mt-2 lead fw-bold">
+          Coleta de recicláveis nas escolas da rede pública municipal
+        </p>
+        <article class="mt-2">
+          <p class="lead">
+            O projeto
+            <strong class="text-green-black fw-bold">Missão Verde</strong> promove uma
+            gincana de coleta seletiva de recicláveis entre as instituições municipais de ensino,
+            com objetivo de engajar a população na logística reversa, disseminar a cultura de
+            reciclagem para mais de
+            <strong class="text-green-black fw-bold"
+              >170 mil alunos e seus familiares</strong
+            >, ampliar a rede de coleta de recicláveis, inserindo as escolas como pontos
+            estratégicos de apoio, e certificar mais de 20 mil alunos em educação ambiental, a fim
+            de se chegar a 200 toneladas de coleta de recicláveis por mês e ajudar Fortaleza a
+            caminhar em direção à meta de 50% de reciclagem dos resíduos recicláveis gerados na
+            Capital.
+          </p>
+        </article>
+      </div>
+      <div class="s-about_colText--div d-flex justify-content-between align-items-between mt-3">
+        <div class="s-about_colText--div text-center">
+          <img
+            src="{% static 'images/icons/027-students.png' %}"
+            class="s-about_colText--icon"
+            alt="icone missão verde"
+          />
+          <br />
+          <strong class="text-green-black mt-1">Educação</strong>
+        </div>
+        <div class="s-about_colText--div text-center">
+          <img
+            src="{% static 'images/icons/015-reuso.png' %}"
+            class="s-about_colText--icon"
+            alt="icone missão verde"
+          />
+          <br />
+          <strong class="text-green-black mt-1">Reciclagem</strong>
+        </div>
+        <div class="s-about_colText--div text-center">
+          <img
+            src="{% static 'images/icons/ranking.png' %}"
+            class=""
+            width="120"
+            alt="icone missão verde"
+          />
+          <br />
+          <strong class="text-green-black mt-1">Premiação</strong>
+        </div>
+      </div>
+    </div>
+    <div class="s-about_colImage wow rollIn">
+      <img
+        src="{% static 'images/arco-students.jpg' %}"
+        class="img-fluid"
+        alt="logo missão verde"
+      />
+    </div>
+  </div>
+</section>
+<!--/section about -->
+
+<!-- participar -->
+<section class="s-participar s-content">
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <h2 class="text-green-black ">Como participar</h2>
+  </div>
+  <div class="d-flex flex-lg-row flex-column container mt-2">
+    <div class="s-participar__bloc d-flex">
+      <div class="d-flex flex-column">
+        <div class="s-participar__bloc--card wow rollIn">
+          <div class="s-participar__bloc--image">
+            <img
+              class=""
+              src="{% static 'images/icons/login.png' %}"
+              width="65"
+              alt="icone login"
+            />
+          </div>
+          <h2>1.</h2>
+          <article>
+            O aluno  inicia a coleta dos itens (Garrafas Pets e latinhas de alumínio).
+            <br>
+            <span class="invis"> Coletas seletivas</span>
+          </article>
+        </div>
+        <div class="s-participar__bloc--card wow rollIn">
+          <div class="s-participar__bloc--image">
+            <img src="{% static 'images/icons/lista.png' %}" width="65" alt="icone login" />
+          </div>
+          <h2>2.</h2>
+          <article>
+            O aluno descarta os itens coletados na sua escola, a escola registra a coleta e os pontos adquiridos.
+            <br>
+            <span class="invis"> Coletas seletivas</span>
+          </article>
+        </div>
+      </div>
+      <div class="d-flex flex-column">
+        <div class="s-participar__bloc--card wow rollIn">
+          <div class="s-participar__bloc--image">
+            <img src="{% static 'images/icons/l-sacola.png' %}" width="65" alt="icone login" />
+          </div>
+          <h2>3.</h2>
+          <article>
+            O aluno entra no portal, verifica seu ranqueamento, os prêmios disponíveis e seu número
+            de pontos.
+            <br>
+            <span class="invis"> Coletas seletivas</span>
+          </article>
+        </div>
+        <div class="s-participar__bloc--card wow rollIn">
+          <div class="s-participar__bloc--image">
+            <img src="{% static 'images/icons/trofeu.png' %}" width="65" alt="icone login" />
+          </div>
+          <h2>4.</h2>
+          <article>
+            O aluno troca seus pontos por prêmios disponíveis do projeto, de acordo com sua
+            pontuação.
+            <br>
+            <span class="invis"> Coletas seletivas</span>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="s-participar__bloc">
+      <div class="s-participar__bloc--card wow rollIn">
+        <div class="s-participar__bloc--image">
+          <img src="{% static 'images/icons/game-over.png' %}" width="65" alt="icone login" />
+        </div>
+        <h2>5.</h2>
+        <article>
+          Encerra-se a competição. Todo o processo ocorre igualmente em todas as escolas inscritas.
+
+        </article>
+        <p class="mt-4">Em caso de dúvidas, nos mande uma mensagem.</p>
+        <a href="/duvidas" class="btn btn-success">Fale conosco</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ participar -->
+
+<!-- section numeros-->
+<section class="s-numeros s-content">
+  <div class="container s-numeros__container bg-green-teal">
+    <div class="row">
+      <div class="col-lg-6 col-12 d-flex flex-column s-numeros__container--blocoText justify-content-center wow bounceInRight">
+        <div class=" s-numeros__container--intro s-content">
+          <h3 class="text-white mb-4">Acompanhe o impacto do projeto até agora!</h3>
+          <!-- <p class="lead text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odio quaerat repudiandae 
+            necessitatibus debitis maxime perferendis, sint dolor eveniet blanditiis unde quia praesentium possimus. 
+            Illum totam nam hic doloribus assumenda.
+          </p> -->
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="text-center s-numeros__container--div mx-2">
+            <img src="{% static 'images/icons/016-criancas.png' %}" alt="crianças estudantes" width="65">
+            <h3 id="contador">
+              {{alunos_qtd}}
+            </h3>
+            <p>Alunos</p>
+          </div>
+          <div class="text-center s-numeros__container--div mx-2">
+            <img src="{% static 'images/icons/015-reuso.png' %}" alt="material coletado" width="65">
+            <h3>
+              {{reciclaveis_qtd}}
+            </h3>
+            <p>Material coletado</p>
+          </div>
+          <div class="text-center s-numeros__container--div mx-2">
+            <img src="{% static 'images/icons/ranking.png' %}" alt="" width="75">
+            <h3>
+              {{entregas}}
+            </h3>
+            <p>Prêmios recebidos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12 wow rollIn">
+        <img
+        src="{% static 'images/bgNumeros.png' %}"
+        class="img-fluid "
+        alt="ranking escolar alunos"
+      />
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!--/section numeros-->
+
+<!-- section ranking-->
+<section class="s-ranking s-content">
+  {% if alunos and alunos|length == 3 %}
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-7 col-12 wow bounceInRight">
+        <div class="s-rankingTitles">
+          <h2 class="mb-3 text-green-black">Ranking dos Alunos</h2>
+          <h4 class="text-orange">Confira o ranking de quem reciclou mais, veja sua posição</h4>
+        </div>
+        <div
+          class="s-rankingCards d-flex flex-md-row flex-column justify-content-between align-items-center"
+        >
+          <!-- ranking alunos for -->
+
+          {% for aluno in alunos %}
+          <div class="card s-rankingCards__card" >
+            <div class="s-rankingCards__card--image" >
+              <img src={% if forloop.counter == 1 %}"{% static 'images/medalha-2.png' %}"{% elif forloop.counter == 2 %}"{% static 'images/medalha-1.png' %}"{% else %} "{% static 'images/medalha-3.png' %}"{% endif %} alt="medalha colocação" width="50">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title s-rankingCards__card--points">
+                {{ aluno.pontosAcumulados }} <span><img src="{% static 'images/res.png' %}" alt=" pontos recycles" width="40"></span>
+              </h3>
+              <h5 class="card-nome s-rankingCards__card--nome text-capitalize" >{{ aluno.nome|lower }}</h5>
+              <h6 class="card-subtitle s-rankingCards__card--subtitle mb-4 text-muted">
+                Série: {{ aluno.serie }} {{ aluno.turma }}
+              </h6>
+              <p class="card-text s-rankingCards__card--text">{{ aluno.escola.nome }}</p>
+            </div>
+          </div>
+          {% endfor %}
+          <!--/ ranking alunos for -->
+        </div>
+        <div class="my-3">
+          <a href="/ranking?modo=aluno" class="btn btn-success btn-rounded">
+            Ver ranking de alunos geral</a
+          >
+        </div>
+      </div>
+      <div class="col-xl-5 col-12 d-none d-lg-flex justify-content-end wow rollIn">
+        <img
+          src="{% static 'images/aluno-molde.jpg' %}"
+          class="img-fluid"
+          alt="ranking escolar alunos"
+        />
+      </div>
+    </div>
+  </div>
+  {% endif %} {% if escolas and escolas|length == 3 %}
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-xl-5 col-12 d-none d-lg-block wow bounceInRight">
+        <img src="{% static 'images/escolas-molde.jpg' %}" class="img-fluid" alt="escolas " />
+      </div>
+      <div class="col-xl-7 col-12 wow rollIn">
+        <div class="s-rankingTitles">
+          <h2 class="mb-3 text-green-black">Ranking das Escolas</h2>
+          <h4 class="text-orange">Confira sua pontuação das escolas</h4>
+        </div>
+        <div
+          class="s-rankingCards d-flex flex-md-row flex-column justify-content-between align-items-center mt-3"
+        >
+          <!-- ranking escolas for -->
+          {% for escola in escolas %}
+          <div class="card s-rankingCards__card">
+            <div class="s-rankingCards__card--image">
+              <img src={% if forloop.counter == 1 %}"{% static 'images/medalha-2.png' %}"{% elif forloop.counter == 2 %}"{% static 'images/medalha-1.png' %}"{% else %} "{% static 'images/medalha-3.png' %}"{% endif %} alt="medalha colocação" width="50">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title s-rankingCards__card--points">
+                {{ escola.pontos }} <span><img src="{% static 'images/res.png' %}" alt=" pontos recycles" width="40"></span>
+              </h3>
+              <h5 class="card-nome s-rankingCards__card--nome">{{ escola.nome }}</h5>
+            </div>
+          </div>
+          {% endfor %}
+          <!--/ ranking escolas for -->
+        </div>
+        <div class="my-3 t-right">
+          <a href="/ranking?modo=escola" class="btn btn-warning btn-rounded">
+            Ver ranking de escolas geral</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>
+<!--/section ranking-->
+
+<!--ecoloja-->
+<section class="s-ecoloja  d-flex flex-xl-row flex-column align-items-center">
+  <div class="bg-orange w-50-xl w-100 s-ecoloja__bloco d-flex flex-column justify-content-center wow bounceInLeft">
+
+
+    <img
+    src="{% static 'images/aluno-ecoloja.png' %}"
+    width="325"
+    alt="alunos-arte"
+    class=""
+    />
+    <h2 class="">Ecoloja Missão Verde</h2>
+     
+    <p class="text-white lead my-3">
+      A <strong class="fw-bold">EcoLoja</strong> é o espaço onde você pode verificar os prêmios: troque 
+      seus <strong class="fw-bold">Recicles (Re$)</strong> por prêmios!
+      <br>
+
+    </p>
+    <div class="my-2">
+      <a href="/ecoloja" type="button" class="btn btn-success s-ecoloja__bloco--button mt-2">Listar a tabela</a>
+    </div>
+
+  </div>
+  <div class="bg-yellow w-50-xl w-100 s-ecoloja__bloco d-flex flex-column justify-content-center wow bounceInRight">
+    <article>
+      <h2 class="">
+        Acumule Recicles (Re$) com: <span>        
+        <img
+          src="{% static 'images/res.png' %}"
+          width="60"
+          alt="lata alumínio"
+          /></span>
+      </h2>
+      <p class="lead">
+        <strong class="text-green-black fw-bold">Recicles (Re$)</strong> é um meio de troca pelo 
+        qual   <br>são efetuadas transações no programa
+        <strong class="text-green-black fw-bold">Missão verde.</strong>
+
+      </p>
+      <p class="lead">
+        <strong class="fw-bold">
+          Você acumula pontos:
+        </strong>
+      </p>
+    </article>
+    <div class="d-flex align-items-center s-ecoloja__bloco--moeda">
+      <img
+      src="{% static 'images/res.png' %}"
+      width="60"
+      alt=" moeda recicle"
+      /> 
+      <strong>=</strong>
+      <img
+      src="{% static 'images/icons/023-lata-de-cerveja.png' %}"
+      width="60"
+      alt="lata alumínio"
+      />
+      <strong>Latas de alumínio</strong>
+    </div>
+    <div class="d-flex align-items-center s-ecoloja__bloco--moeda">
+      <img
+      src="{% static 'images/res.png' %}"
+      width="60"
+      alt=" moeda recicle"
+      />        
+      <strong>=</strong>
+      <img
+      src="{% static 'images/icons/015-reuso.png' %}"
+      width="60"
+      alt="garrafa pets"
+      />
+      <strong>Garrafas pets</strong>
+    </div>
+  </div>
+</section>
+<!--/ecoloja-->
+
+
+<!--produtos carousel -->
+<section class="s-content s-produtos">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="text-green-black mb-4">Prêmios da Ecoloja</h2>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div
+        class="MultiCarousel"
+        data-items="1,3,3,4"
+        data-slide="1"
+        id="MultiCarousel"
+        data-interval="1000"
+      >
+        <div class="MultiCarousel-inner">
+          {% if premios %} {% for premio in premios %}
+          <div class="item">
+            <div class="card card-curso">
+              <div class="card-body">
+                <h4 class="card-title pl-0 mb-0">{{ premio.titulo }}</h4>
+                <p class="card-text">
+                  <span>Recicles: <strong> {{ premio.pontos }}</strong> <img src="{% static 'images/res.png' %}" alt="recicle" width="35"> </span>
+                </p>
+                <p class="card-disponiveis">
+                  <span>Disponíveis: {{ premio.quantidade }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %} {% endif %}
+        </div>
+        <button class="leftLst btnChevron"><</button>
+        <button class="rightLst btnChevron">></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-right">
+        <a href="/ecoloja" class="btn btn-success btn-rounded">Veja todos os prêmios</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /produtos carousel -->
+
+<!-- area duvidas recycle -->
+<section class="s-recycle s-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-12 d-flex align-items-center wow rollIn">
+        <div>
+          <h3 class="text-green-black mb-3">Ainda tem dúvidas <br> de como participar ou reciclar?</h3>
+          <a href="/duvidas" class="btn btn-success">Acesse as dúvidas frequentes</a>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-12 d-flex align-items-center justify-content-center wow bounceInRight"
+      >
+        <img
+          src="{% static 'images/simbol-duvidas.png' %}"
+          class="img-fluid mt-2"
+          alt="escolas duvidas"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<!--/area duvidas recycle -->
+
+<!-- Parceiros-->
+<section id="anchorPar" class="s-content s-parceiros">
+  <div class="container">
+      <div class="row mb-5">
+          <div class="col">
+              <h2 class="text-center mb-4 text-green-black">Parceiros</h2>
+          </div>
+      </div>
+      <div class="row">
+
+          {% for p in parceiros %}
+          <!--for loop div logo parceiros-->
+          <div class="col-6 col-lg-3 s-parceiros__block">
+              <a href="{{p.get_url}}" target="_blank">
+                  <img src="{{p.imagem.url}}" alt="logo parceiro" class="mb-3">
+              </a>
+          </div>
+          <!--/for loop div logo parceiros-->
+          {% endfor %}
+
+      </div>
+  </div>
+</section>
+<!--/Parceiros-->
+
 {% endblock %}

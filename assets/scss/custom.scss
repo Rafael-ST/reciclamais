@@ -1,0 +1,58 @@
+$custom-colors: (
+        "tertiary": #ffe5ab,
+        "quaternary": #11100d
+);
+$body-color: map-get($custom-colors, "quaternary");
+
+$primary: #85923e;
+$secondary: #e2743b;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$font-family-base: "Open Sans", sans-serif;
+$enable-negative-margins: true;
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+.txt-shadow {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.txt-shadow-soft {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-up {
+        box-shadow: 0 -1px 5px 1px #00000050;
+}
+
+.bg-gold {
+        background-color: #fcc417 !important;
+}
+
+.bg-silver {
+        background-color: #d7d7d9 !important;
+}
+
+.bg-bronze {
+        background-color: #f79429 !important;
+}
+
+@each $color-name, $color-value in $custom-colors {
+        .bg-#{$color-name} {
+                background-color: $color-value !important;
+        }
+
+        .text-#{$color-name} {
+                color: $color-value !important;
+        }
+}
+@font-face {
+        font-family: "MADE Dillan";
+        src: url("fonts/MADE Dillan PERSONAL USE.otf") format("opentype");
+}
+
+@font-face {
+        font-family: "MADE TOMMY";
+        src: url("fonts/MADE TOMMY Regular_PERSONAL USE.otf") format("opentype");
+}

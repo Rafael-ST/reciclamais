@@ -1,0 +1,226 @@
+.s-scessibilityBlock{
+  left: 98.7%;
+  flex-direction: column;
+  display: none;
+  div{
+    margin-bottom: 10px;
+    @include border-radius(100%);
+    color: $black;
+    padding: 6px;
+    background: $white;
+    text-align: center;
+    a{
+      font-size: .775rem;
+      font-weight: bold;
+      color: $black;
+      text-align: center;
+    }
+  }
+}
+
+
+
+.hide{display:none;}
+
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+.contrast p,
+.contrast label,
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast i,
+.contrast b,
+.contrast u,
+.contrast span {
+  color: white !important; }
+
+.contrast a {
+  color: yellow !important; }
+  .contrast a:hover {
+    color: white !important; }
+
+.contrast a.btn {
+  color: yellow !important;
+  background: black !important;
+  border: 1px solid yellow !important; }
+  .contrast a.btn:hover {
+    color: white !important; }
+
+.contrast button,
+.contrast input[type=button],
+.contrast input[type=reset],
+.contrast input[type=submit] {
+  background: black !important;
+  color: yellow !important;
+  border: none !important; }
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+  background: black !important;
+  border: 1px solid white !important;
+  color: white !important; }
+
+.contrast{
+  .carousel-item{
+    background: none !important;
+    .carousel-caption{
+      background: rgba(255,255,255, .55) !important;
+      padding: 10px;
+      h2, p{
+        color: black !important;
+      };
+    }
+  }
+}
+
+.contrast{
+  section.s-content,.s-acessibility,body,#footer, header, .mask, main{
+    background:$black !important;
+  }
+  section.s-content{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+  .mask{
+    opacity: .75 !important;
+  }
+  .page-header{
+    -webkit-filter: grayscale(100%) contrast(120%) !important;
+    filter: grayscale(100%) contrast(120%) !important;
+  }
+  section.s-initAbout, section.s-content{
+    .card{
+      background: $black !important;
+      border: 1px solid $white !important;
+    }
+  }
+
+  #footer{
+    border:$black !important;
+    color: $white !important ;
+  }
+}
+
+.contrast img.on-contrast-force-gray {
+  -webkit-filter: grayscale(100%) contrast(120%);
+          filter: grayscale(100%) contrast(120%); }
+
+.contrast img.on-contrast-force-white {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1); }
+
+.contrast {
+    img{
+        -webkit-filter: grayscale(100%) contrast(120%);
+        filter: grayscale(100%) contrast(120%);
+    }
+}
+
+.contrast{
+  img.on-contrast-invert{
+    -webkit-filter: brightness(1) invert(1) !important;
+    filter: brightness(1) invert(1) !important;
+  }
+}
+
+.contrast {
+  section.s-navMain{
+    .navbar{
+      background: $black !important;
+      border:1px solid $white !important;
+    }
+  }
+}
+
+.contrast a i {
+  color: yellow !important; }
+
+.contrast .inputGroup-header .form-control {
+  color: #fff !important;
+  border: 1px solid #fff !important; }
+
+.contrast .form-control {
+  color: #fff !important;
+  border: 1px solid #fff !important; }
+  
+  .contrast small{
+    background: black;
+    color: white;
+  }
+  
+  .contrast i {
+    background: black !important;
+    color: white !important;
+  }
+
+  .contrast{
+    .s-participar__bloc--card{
+      background: black !important;
+      color: white !important;
+    }
+  }
+
+  .contrast{
+    .bg-green-black, .bg-primary, .bg-green, .s-numeros__container, .s-ecoloja{
+      background: black !important;
+    }
+    .s-numeros__container{
+      border: 1px solid white;
+      article{
+        color: white !important;
+      }
+    }
+    .btn{
+      border: 1px solid yellow !important;
+    }
+
+    .s-ecoloja__bloco{
+      background: black !important;
+      border: 1px solid white !important;
+    }
+  }
+  
+  .contrast{
+    .s-acessibility{
+      div{
+        background: black;
+        a, span{
+          color: yellow !important;
+        }
+        &:hover{
+          opacity: .7;
+        }
+
+      }
+    }
+    .blockAdress{
+      address{
+        color: white !important;
+      }
+    }
+
+    .nav-item{
+      .text-orange{
+        color: white !important;
+      }
+    }
+  }
+
+

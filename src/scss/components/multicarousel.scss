@@ -1,0 +1,50 @@
+.MultiCarousel {
+    float: left;
+    overflow: hidden;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    button.btnChevron {
+        height: 45px;
+        width: 45px;
+        font-size: x-large;
+        background-color: $white;
+        border:1px solid $green;
+        color: $green;
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+    .MultiCarousel-inner {
+        transition: 1s ease all;
+        float: left;
+        .item {
+            float: left;
+            cursor: pointer;
+        }
+        .item > div {
+            text-align: left;
+            margin: 15px;
+        }
+    }
+    .leftLst,
+    .rightLst {
+        position: absolute;
+        border-radius: 50%;
+        top: calc(50% - 20px);
+        height: 50px;
+        font-size: large;
+        .over {
+            pointer-events: none;
+            background: #ccc;
+            border: 1px solid #888;
+            color: $white;
+        }
+    }
+    .leftLst {
+        left: 0;
+    }
+    .rightLst {
+        right: 0;
+    }
+}

@@ -1,12 +1,67 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% block content %}
-    {% endblock %}
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <title>Missão Verde</title>
+    <meta name="description" content="Missão verde fortaleza 
+    gincana de coleta seletiva de recicláveis entre as instituições municipais de ensino,
+    com objetivo de engajar alunos e a população" />
+    <meta name="keywords" content="Reciclagem, alunos da prefeitura de 
+    fortaleza, coleta de recicláveis, educação, coleta seletiva, 
+    prefeitura de fortaleza, secreataria de conservação, citinova, secretaria de educação municipal" />
+    <meta name="rights" content="Todos os direitos reservados a Prefeitura de Fortaleza" />
+    <meta name="author" content="Citinova - Prefeitura de Fortaleza" />
+
+    <meta property="og:title" content="Missão verde - Prefeitura de Fortaleza" />
+    <meta property="og:description" content="O Missão verde propõe uma gincana de coleta seletiva de recicláveis entre as instituições municipais de ensino,
+    com objetivo de engajar alunos e a população" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="https://missaoverde.fortaleza.ce.gov.br" />
+    <meta property="og:image" content="{% static 'images/icon.png' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/styles/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bgcustom.css' %}" />
+  </head>
+  <body class="">
+    <!-- pre-load -->
+    <div id="loader-wrapper">
+      <img src="{% static 'images/logo.png' %}" class="logo-svg" alt="icone load" />
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!-- /pre-load -->
+    {% include 'app/templates/app/header.html' %}
+    <main id="content-wrapper" class="wrapper">
+      {% block content %}
+
+      {% endblock %}
+    </main>
+    {% include 'app/templates/app/footer.html' %}
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-politica" tabindex="-1" role="dialog" aria-labelledby="modal-politicaTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black" id="modal-politicaTitle">Política de privacidade</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            {% include 'app/templates/app/includes/politica-privacidade.html' %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  {% block javascript %}
+    <script src="{% static 'assets/js/main.bundle.js' %}"></script>
+  {% endblock %}
 </html>
