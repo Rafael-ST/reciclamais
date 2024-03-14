@@ -18,8 +18,8 @@ def loginurl(request):
         senha = request.POST['senha']
         if email == "" or senha == "":
             return redirect('loginurl')
-        if (User.objects.filter(email=email)).exists():
-            nome = User.objects.filter(email=email).values_list('username', flat=True).get()
+        if (User.objects.filter(username=email)).exists():
+            nome = User.objects.filter(username=email).values_list('username', flat=True).get()
             user = auth.authenticate(request, username=nome, password=senha)
             if user is not None:
                 auth.login(request, user)
