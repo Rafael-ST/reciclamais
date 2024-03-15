@@ -24,10 +24,15 @@ def cadastro(request):
             admin_user.save()
             operador_group = Group.objects.get(name='Condominio')
             operador_group.user_set.add(admin_user)
-            form = CondominioForm()
+            return redirect('cadastro_success')
+            # form = CondominioForm()
     else:
         form = CondominioForm()
     return render(request, 'app/cadastro.html', {'form': form})
+
+
+def cadastro_success(request):
+    return render(request, 'app/cadastro_success.html')
 
 
 @login_required
