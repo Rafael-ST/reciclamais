@@ -56,6 +56,11 @@ class Condominio(BaseModel):
     dias_semana = models.CharField(verbose_name='Dias da Semana', max_length=10, null=True)
     zelador = models.CharField(verbose_name='Nome do Zelador', max_length=100, null=True, blank=True)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.dias_semana:
+            self.dias_semana = eval(self.dias_semana)
+
     def __str__(self):
         return self.nome
     
