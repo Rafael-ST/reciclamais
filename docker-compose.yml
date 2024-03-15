@@ -10,7 +10,7 @@ services:
       && python manage.py runserver 0.0.0.0:8000"
     # command: >
     #   sh -c "python manage.py migrate
-    #   && gunicorn --bind 0.0.0.0:8000 --timeout 300 --log-level debug missaoverde.wsgi"
+    #   && gunicorn --bind 0.0.0.0:8000 --timeout 300 --log-level debug reciclomais.wsgi"
     volumes:
       - .:/www
     ports:

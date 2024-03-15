@@ -13,5 +13,5 @@ COPY . /www/
 
 EXPOSE 8080
 
-# CMD python manage.py migrate && gunicorn --bind 0.0.0.0:8080 --timeout 1000 --log-level debug missaoverde.wsgi
+# CMD python manage.py migrate && gunicorn --bind 0.0.0.0:8080 --timeout 1000 --log-level debug reciclomais.wsgi
 # python manage.py runserver 0.0.0.0:8080
