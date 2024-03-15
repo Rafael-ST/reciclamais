@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 from django.contrib import auth, messages
-from app.forms import Condominioform
+from app.forms import CondominioForm
 
 def index(request):
     return render(request, 'app/index.html')
@@ -10,7 +10,7 @@ def index(request):
 
 def cadastro(request):
     if request.method == 'POST':
-        form = Condominioform(request.POST)
+        form = CondominioForm(request.POST)
         if form.is_valid():
             nome = form.cleaned_data['nome']
             senha = form.cleaned_data['senha']
@@ -24,9 +24,9 @@ def cadastro(request):
             admin_user.save()
             operador_group = Group.objects.get(name='Condominio')
             operador_group.user_set.add(admin_user)
-            form = Condominioform()
+            form = CondominioForm()
     else:
-        form = Condominioform()
+        form = CondominioForm()
     return render(request, 'app/cadastro.html', {'form': form})
 
 

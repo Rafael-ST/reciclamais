@@ -23,3 +23,12 @@ RESPONSAVEL = (
     ('0', u'Síndico'),
     ('1', u'Empresa')
 )
+
+DIAS_SEMANA = (
+    ('0', u'SEG'),
+    ('1', u'TER'),
+    ('2', u'QUA'),
+    ('3', u'QUI'),
+    ('4', u'SEX'),
+    ('5', u'SAB')
+)

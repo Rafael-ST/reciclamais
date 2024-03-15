@@ -35,7 +35,7 @@ class Condominio(BaseModel):
     whatsapp = models.BooleanField(verbose_name='É Whatsapp?')
     email = models.CharField(verbose_name='Email', max_length=200)
     qtd_habitacional = models.PositiveIntegerField(verbose_name='Unidades habitacionais serão atendidas')
-    primeira_coleta = models.DateField(verbose_name='Data da primeira coleta')
+    # primeira_coleta = models.DateField(verbose_name='Data da primeira coleta')
     turno = models.CharField(verbose_name='Turno de preferência', max_length=100, choices=TURNO)
     tipo_pix = models.CharField(verbose_name='Tipo de chave pix', max_length=50, choices=CHAVE_PIX)
     chave_pix = models.CharField(verbose_name='Chave pix',max_length=300)
@@ -43,8 +43,9 @@ class Condominio(BaseModel):
     indicacao = models.CharField(verbose_name='Onde conheceu o Recicla+?', max_length=200, choices=INDICACAO)
     responsavel = models.CharField(verbose_name='Tipo de Responsável', max_length=100, choices=RESPONSAVEL)
     nome_responsavel = models.CharField(verbose_name='Nome do Responsável', max_length=100)
-    cpf_responsavel = models.CharField(max_length=30, verbose_name='CPF Responsável', validators=[validate_CPF], unique='True', blank=True, null=True)
-    cnpj = models.CharField(max_length=30, verbose_name='CNPJ Responsável', validators=[validate_CNPJ], unique='True', blank=True, null=True)
+    contato_responsavel = models.CharField(verbose_name='Contato do Responsável', max_length=20, null=True)
+    # cpf_responsavel = models.CharField(max_length=30, verbose_name='CPF Responsável', validators=[validate_CPF], unique='True', blank=True, null=True)
+    # cnpj = models.CharField(max_length=30, verbose_name='CNPJ Responsável', validators=[validate_CNPJ], unique='True', blank=True, null=True)
     cep = models.CharField(verbose_name='CEP', max_length=10, null=True)
     logradouro = models.CharField(verbose_name='Logradouro', max_length=100)
     numero = models.PositiveIntegerField(verbose_name='Número')
@@ -52,6 +53,8 @@ class Condominio(BaseModel):
     bairro = models.ForeignKey('Bairro', verbose_name="Bairro", on_delete=models.PROTECT)
     ponto_referencia = models.CharField(verbose_name='Ponto de referência', max_length=150, null=True, blank=True)
     identificador = models.IntegerField(verbose_name='Identificador', default=0)
+    dias_semana = models.CharField(verbose_name='Dias da Semana', max_length=10, null=True)
+    zelador = models.CharField(verbose_name='Nome do Zelador', max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.nome
