@@ -1,0 +1,23 @@
+$custom-colors: (
+        "cOrange": #E69600,
+        "cGreen": #009074,
+        "cYellow": #FFF032
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$font-family-base: "Open Sans", sans-serif;
+$enable-negative-margins: true;
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@each $color-name, $color-value in $custom-colors {
+        .bg-#{$color-name} {
+                background-color: $color-value !important;
+        }
+
+        .text-#{$color-name} {
+                color: $color-value !important;
+        }
+}

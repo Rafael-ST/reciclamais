@@ -1,0 +1,187 @@
+{% load static %} {% block content %}
+<!--acessibilidade-->
+<section class="s-acessibility d-none d-lg-block top-0 bg-yellow">
+  <div class="app-acessibilidade">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12 app-acessibilidadeMenu d-none d-md-flex align-items-center">
+          <a
+            id="anchorMain"
+            class="mr-1"
+            href="#s-about"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="atalho alt + 1"
+            data-original-title="alt + 1"
+            accesskey="1"
+          >
+            Conteúdo Central |</a
+          >
+          <a
+            id="anchorHeader"
+            class="mr-1"
+            href="#content-wrapper"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="atalho alt + 2"
+            data-original-title="alt + 2"
+            accesskey="2"
+          >
+            Menu |</a
+          >
+          <a
+            id="anchorFooter"
+            class="mr-1"
+            href="#footer"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="atalho alt + 3"
+            data-original-title="alt + 3"
+            accesskey="3"
+          >
+            Rodapé
+          </a>
+          <a
+            href="#"
+            id=""
+            class="altoContraste colorContrast mx-2"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="atalho alt + 0"
+            accesskey="0"
+          >
+            <span class="fa d-inline fa-adjust" aria-hidden="true"></span>
+          </a>
+          <a
+            href="#"
+            id=""
+            class="decrease-font sizeMenos mx-1"
+            data-toggle="tooltip"
+            data-placement="top"
+            >A-</a
+          >
+          <a
+            href="#"
+            id=""
+            class="normal-font sizePadrao mx-1"
+            data-toggle="tooltip"
+            data-placement="top"
+            >A</a
+          >
+          <a
+            href="#"
+            id=""
+            class="increase-font sizeMais mx-1"
+            data-toggle="tooltip"
+            data-placement="top"
+            >A+</a
+          >
+        </div>
+        <div class="col-lg-6 col-12 app-acessibilidadeItens d-none d-md-block">
+          <ul class="menu mb-0">
+            <li class="nav-item">
+              <a
+                href="https://acessoainformacao.fortaleza.ce.gov.br/"
+                data-toggle="tooltip"
+                class="nav-link px-1 text-gray-700"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Acesso a informação</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://transparencia.fortaleza.ce.gov.br/"
+                data-toggle="tooltip"
+                class="nav-link px-1 text-gray-700"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Transparência</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://catalogodeservicos.fortaleza.ce.gov.br/"
+                data-toggle="tooltip"
+                class="nav-link px-1 text-gray-700"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Serviços</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="http://legislacao.fortaleza.ce.gov.br/index.php/P%C3%A1gina_principal"
+                data-toggle="tooltip"
+                class="nav-link px-1 text-gray-700"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Legislação</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/acessibilidade-->
+<header id="header-nav" class="s-navMain bg-yellow">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="navbar-brand d-flex align-items-center">
+        <a href="/" class=" nav-logoMissao">
+          <img
+          class="d-block mx-2 on-contrast-invert"
+          src="{% static 'images/logo.png' %}"
+          alt="Logo missãoverde"
+          width="110"
+        />
+        </a>
+        <a href="/" class="nav-logoPref">
+          <img
+            class="on-contrast-invert"
+            src="{% static 'images/logoPref.png' %}"
+            alt="Logo prefeitura de fortaleza"
+            width="160"
+          />
+        </a>
+      </div>
+      <button
+        class="navbar-toggler b-none a-hover"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+      <i class="fa fa-bars text-black"></i>
+      </button>
+
+      <div class="collapse navbar-collapse mr-0" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link mx-2 nav-home" aria-current="page" href="/">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="/#s-about">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 nav-ranking" href="/ranking?modo=aluno">Ranking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 nav-ecoloja" href="/ecoloja">Ecoloja</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 nav-aluno" href="/aluno">Aluno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 nav-duvidas" href="/duvidas">Fale conosco</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+{% endblock %}

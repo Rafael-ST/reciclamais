@@ -1,0 +1,303 @@
+
+
+.s-banner{
+    .carousel-inner{
+        .carousel-item{
+            .carousel-caption{
+                top: 15%;
+                color: $primary;
+                left: 15%;
+                padding-bottom: 1.25rem;
+                padding-top: 1.25rem;
+                text-align: left;
+                right: inherit;
+                .carousel-itemLogo{
+                    width: 300px;
+                }
+                h2{
+                    color:$primary;
+                }
+            }
+        }
+    }
+
+    .carousel-indicators [data-bs-target]{
+        background-color: $green-black;
+    }
+    
+}
+
+.s-about{
+    .s-about_colText{
+        padding: 5px;
+        padding-left: 0px;
+        .s-about_colText--div{
+            width: 75%;
+            margin: 0 auto;
+            .s-about_colText--icon{
+                width: 100px;
+            }
+        }
+    }
+}
+
+
+.s-ranking{
+    .s-rankingTitles{
+        margin-bottom: 125px;
+    }
+    .s-rankingCards {
+        &__card{
+            @extend .shadow-final;
+            margin-right: 15px;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            width: 25rem;
+            &--image{
+                @include border-radius(50%);
+                width: 75px;
+                height: 75px;
+                margin: 0 auto;
+                margin-top: -35px;
+                overflow: hidden;
+            }
+            &--nome{
+                margin-bottom: 10px;
+                color: $indigo;
+                text-transform: lowercase;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+            &--text{
+                text-transform: lowercase;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+
+            &:nth-child(2n){
+                margin-top: -100px;
+                .card-title{
+                    color: $yellow;
+                }
+            }
+            &:first-child{
+                .card-title{
+                    color: $blue;
+                }
+            }
+            &:nth-child(3n){
+                .card-title{
+                    color: $orange;
+                }
+            }
+        }
+    }
+}
+
+.s-numeros{
+    &__container{
+        background: $green-light;
+        &--div{
+            h3{
+                color: yellow;
+            }
+        }
+        &--intro{
+            padding: 15px;
+        }
+    }
+}
+
+
+.s-ecoloja{
+    &__bloco{
+        height: 100vh;
+        padding: 50px;
+        &--moeda{
+            margin-bottom: 20px;
+            strong{
+                font-size: 1.65rem;
+                margin: 0 1.0rem;
+            }
+        }
+
+        &--button{
+            width: 30%;
+        }
+    }
+    &__blocoText{
+        border: 2px dashed $green-black;
+        padding: 10px;
+        width: 350px;
+        p{
+            font-weight: 500;
+        }
+        &:first-child{
+            margin-right: 40px;
+        }
+        &:last-child{
+            margin-left: 40px;
+        }
+    }
+
+}
+
+.s-produtos{
+    .item{
+        .card-title{
+            font-size: 1.3rem;
+            color: $green;
+            border-bottom: 1px solid $green;
+            margin-bottom: 10px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .card-text{
+            margin-top: 10px;
+            font-weight: 700;
+            strong{
+                font-size: large;
+                color: $orange;
+            }
+        }
+        .card-disponiveis{
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+    }
+}
+
+.s-participar{
+    &__bloc{
+        &--card{
+            background: $yellow-light;
+            border: 4px solid $white;
+            padding: 15px;
+            height: 100%;
+            width: 100%;
+            h2{
+                margin-top: -20px;
+            }
+        }
+        &--image{
+            text-align: center;
+            @include border-radius(50%);
+            background: $white;
+            padding: 20px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.s-parceiros {
+    .s-parceiros__block {
+        img {
+            width: 160px;
+        }
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 560px) and (max-width: 991px) {
+    .s-about_colImage{
+        img{
+            max-width: 540px !important;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .s-content{
+        h2{
+            font-size: 3.0rem;
+        }
+    }
+    .s-numeros{
+        &__container{
+            &--div{
+                h3{
+                    font-size: 2.2rem;
+                    color: yellow;
+                }
+                p{
+                    color: $white;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .s-ecoloja{
+        &__bloco{
+            height: auto;
+        }
+    }
+}
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .s-about{
+        .s-about_colText{
+            padding: 10px;
+            .s-about_colText--div{
+                width: 100%;
+                .s-about_colText--icon{
+                    width: 85px;
+                }
+            }
+        }
+    }
+
+    .s-ranking{
+        .s-rankingCards {
+            &__card{
+                width: 100%;
+                margin-bottom: 45px;
+                margin-right: 0px;
+                &:first-child{
+                    order: 3;
+                }
+                &:nth-child(2n){
+                    order: 1;
+                }
+                &:nth-child(3n){
+                    order: 2;
+                }
+            }
+        }
+    }
+
+    .s-ecoloja{
+        &__bloco{
+            &--button{
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 540px){
+    .s-banner{
+        .carousel-inner{
+            .carousel-item{
+                .carousel-caption{
+                    left: 0 !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,180 @@
+.s-navMain{
+    .navbar{
+        padding-top: 0px;
+        .s-navMain__logo{
+            display: flex;
+            align-items: center;
+            .s-navMain__logo--proj{
+                width: 130px;
+            }
+            .s-navMain__logo--fortPref{
+                width: 160px;
+            }
+        }
+
+        .s-navMain__collapse{
+            button{
+                border:none;
+            }
+        }
+        .navbar-nav{
+            margin-right: 0px !important;
+            font-family: 'Dosis';
+            font-weight: 700;
+            .nav-item{
+                &:last-child{
+                    .nav-link{
+                        margin-right: 0px !important;
+                        padding-right: 0px;
+                    }
+                }
+            }
+            .nav-link{
+                color: $black;
+                font-weight: 700;
+                &:hover{
+                    opacity: .75;
+                }
+            }
+        }
+    }
+}
+
+.s-acessibility{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 500;
+    display: flex;
+    flex: 1;
+    font-size: 0.775rem;
+    padding: 7px 0px;
+    .container{
+        border-bottom: 1px solid $black;
+        padding-bottom: 7px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding: 0 0 7px 0;
+    }
+
+    a{
+        color: $black;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    ul{
+        padding-left: 0px;
+        display: flex;
+        list-style: none;
+        margin-bottom: 0px;
+        justify-content: flex-end;
+        li{
+            margin-right: 10px;
+            &:last-child{
+                margin-right: 0px !important;
+            }
+        }
+    }
+
+    &__utils{
+      display: flex;
+      width: 50%;
+      margin-left: 25px;
+      -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+      align-items: center !important;
+      &--anchors{
+        border-right: 1px solid #000000;
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    &__links {
+        display: flex;
+        width: 50%;
+        margin-right: 25px;
+        &--external{
+            margin-left: auto;
+        }
+    }
+    
+}
+
+@media (max-width: 825px) {
+
+  .s-acessibility{
+      display: block;
+      text-align: center;
+    &__utils{
+        align-items: center;
+        margin-left: 0px;
+        justify-content: center;
+        width: 100%;
+    }
+    &__links {
+        display: none;
+    }
+  }
+
+}
+
+
+
+@media (min-width: 768px) {
+    .navbar-nav{
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}
+
+@media (min-width: 991px) {
+    .s-navMain{
+        .navbar{
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            display: flex;
+            .container{
+                padding-left: 0px !important;
+                padding-right:  0px !important;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+
+    .s-navMain{
+        .navbar{
+            display: block !important;
+            .s-navMain__logo{
+                .s-navMain__logo--fortBil{
+                    width: 85px !important;
+                }
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+            }
+            .s-navMain__logo--fortPref{
+                width: 100px !important;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) and (min-width: 991px) {
+    .s-navMain__logo--fortBil{
+        width: 95px !important;
+    }
+    .s-navMain__logo--fortPref{
+        width: 115px !important;
+    }
+    .navbar-nav{
+        .nav-link{
+            font-size: smaller;
+        }
+    }
+    
+}
+

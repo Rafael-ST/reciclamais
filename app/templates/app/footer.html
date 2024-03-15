@@ -1,0 +1,50 @@
+{% load static %}
+{% block content %}
+{% load static %}
+<!--footer-->
+<footer id="footer" class="s-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12 s-footer__blockLogo order-md-last order-sm-last order-last order-lg-first order-xl-first">
+                <div class="s-footer__logoProjeto">
+                  <a href="" class="">
+                    <img
+                    class="d-block"
+                    src="{% static 'images/logo.png' %}"
+                    alt="Logo missãoverde"
+                    width="165"
+                  />
+                  </a>
+                </div>
+                <div class="d-flex w-100 s-footer__sociais">
+                    <button type="button" class="btn btn-facebook btn-icon-only rounded-circle mr-2">
+                        <span class="btn-inner--icon"><span class="fa fa-facebook"></span></span>
+                    </button>
+                    <button type="button" class="btn btn-twitter btn-icon-only rounded-circle mr-2">
+                        <span class="btn-inner--icon"><span class="fa fa-twitter" aria-hidden="true"></span></span>
+                    </button>
+                    <button type="button" class="btn btn-github btn-icon-only rounded-circle mr-2">
+                        <span class="btn-inner--icon"><span class="fa fa-instagram" aria-hidden="true"></span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 blockAdress d-block">
+                <br>
+                <address class="text-black">
+                    <strong class="font-weight-bold">Prefeitura de Fortaleza<br></strong>
+                    Rua São José, 01 - Centro Fortaleza-CE 
+                    |
+                    <br>
+                    CEP: 60.060-170 <br>
+                </address>
+            </div>
+            <div class="col-lg-4 col-md-12  s-footer__blockLogoPmf order-md-first order-sm-first order-first order-lg-last order-xl-last">
+                <a href="https://www.fortaleza.ce.gov.br/" target="_blank">
+                    <img src="{% static 'images/logoPref.png' %}" class="logoBranca on-contrast-invert" alt="Logo Prefeitura de Fortaleza">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/footer-->
+{% endblock %}
