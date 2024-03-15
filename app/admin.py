@@ -14,5 +14,9 @@ class BairroAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = BairroResource
 
 
+class CondominioAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'cnpj_condominio')
+
+
 admin.site.register(Bairro, BairroAdmin)
-admin.site.register(Condominio)
+admin.site.register(Condominio, CondominioAdmin)

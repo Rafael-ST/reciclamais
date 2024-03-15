@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <h1>Cadastro</h1>
+    <form action="#" action="{% url 'cadastro' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="mb-5 align-items-center">
+            <button class="btn btn-success mb-2 font-large" type="submit">Salvar</button>
+        </div>
+    </form>
+{% endblock %}
