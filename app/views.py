@@ -12,12 +12,14 @@ def cadastro(request):
     if request.method == 'POST':
         form = Condominioform(request.POST)
         if form.is_valid():
+            nome = form.cleaned_data['nome']
             senha = form.cleaned_data['senha']
             cnpj = form.cleaned_data['cnpj_condominio']
             email = form.cleaned_data['email']
+            nome_responsavel = form.cleaned_data['nome_responsavel']
             condominio = form.save()
             print(senha)
-            admin_user = User.objects.create_user(username=cnpj, password=senha, email=email)
+            admin_user = User.objects.create_user(username=cnpj, password=senha, email=email, first_name=nome, last_name=nome_responsavel)
             admin_user.is_staff = False
             admin_user.save()
             operador_group = Group.objects.get(name='Condominio')

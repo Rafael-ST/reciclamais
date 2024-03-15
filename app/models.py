@@ -72,3 +72,27 @@ def set_next_identificador(sender, instance, **kwargs):
             # Se não houver nenhum gerador no banco de dados ainda,
             # você pode começar com 1 ou qualquer outro número que desejar.
             instance.identificador = 1
+
+
+class Duvida(BaseModel):
+    pergunta = models.CharField(verbose_name='Pergunta', max_length=150)
+    resposta = models.CharField(verbose_name='Resposta', max_length=150)
+
+    def __str__(self):
+        return self.pergunta
+
+    class Meta:
+        verbose_name = 'Duvida'
+        verbose_name_plural = 'Duvidas'
+
+
+class Parceiro(BaseModel):
+    nome = models.CharField(verbose_name='Parceiro', max_length=50)
+    imagem = models.ImageField(verbose_name='Imagem', upload_to='parceiros/')
+    link = models.CharField(verbose_name='Link', max_length=150)
+
+    def get_url(self):
+        return self.link if self.link else '#'
+
+    def __str__(self):
+        return self.nome
