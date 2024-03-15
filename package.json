@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run copy-assets && python manage.py runserver",
+    "start": "concurrently \"npm run build\" \"python manage.py runserver\"",
     "copy-assets": "webpack --mode development",
     "watch-sass": "sass --watch ./assets/scss/custom.scss ./app/static/css/custom.css",
     "dev": "concurrently \"npm run watch-sass\" \"npm run start\" \"webpack serve --mode development\"",
