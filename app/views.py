@@ -34,6 +34,9 @@ def cadastro(request):
 def cadastro_success(request):
     return render(request, 'app/cadastro_success.html')
 
+def faleconosco(request):
+    return render(request, 'app/faleconosco.html')
+
 
 @login_required
 def teste_login(request):
