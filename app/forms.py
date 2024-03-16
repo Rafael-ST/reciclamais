@@ -1,11 +1,12 @@
 from django import forms
 from app.models import Condominio
-from app.static_data import DIAS_SEMANA
+from app.static_data import DIAS_SEMANA, BONIFICACAO
 
 class CondominioForm(forms.ModelForm):
     senha = forms.CharField(max_length=100, widget=forms.PasswordInput)
     senha2 = forms.CharField(max_length=100, widget=forms.PasswordInput)
     dias_semana = forms.MultipleChoiceField(choices=DIAS_SEMANA)
+    bonificacao = forms.ChoiceField(widget=forms.RadioSelect, choices=BONIFICACAO)
     class Meta:
         model = Condominio
         exclude = (

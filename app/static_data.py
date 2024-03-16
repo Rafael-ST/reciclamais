@@ -32,3 +32,8 @@ DIAS_SEMANA = (
     ('4', u'SEX'),
     ('5', u'SAB')
 )
+
+BONIFICACAO = (
+    ('0', u'Sim'),
+    ('0', u'Não, aceito que o valor seja revertido para os catadores de Fortaleza')
+)

@@ -2,7 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 import uuid
 from app.validations import validate_CNPJ, validate_CPF
-from app.static_data import TURNO, CHAVE_PIX, INDICACAO, RESPONSAVEL
+from app.static_data import TURNO, CHAVE_PIX, INDICACAO, RESPONSAVEL, BONIFICACAO
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
@@ -55,6 +55,7 @@ class Condominio(BaseModel):
     identificador = models.IntegerField(verbose_name='Identificador', default=0)
     dias_semana = models.CharField(verbose_name='Dias da Semana', max_length=10, null=True)
     zelador = models.CharField(verbose_name='Nome do Zelador', max_length=100, null=True, blank=True)
+    bonificacao = models.CharField(verbose_name='Bonificação', max_length=50, null=True, choices=BONIFICACAO)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
