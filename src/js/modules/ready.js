@@ -5,9 +5,11 @@ import { scrollFunc } from './scroll'
 import { redirect } from './redirect'
 import { mobile } from './mobile'
 import { accordionarrowspin } from './accordionarrowspin'
+import { form } from './form'
 
 //vendors
 import WOW from'@/js/vendors/wow';
+import { script } from './script';
 
 /**
  * Run event after DOM is ready
@@ -54,4 +56,11 @@ ready(function () {
   let mw = window.matchMedia('(max-width: 768px)')
   mobile(mw)
   mw.addListener(mobile)
+
+  //form
+  form()
+
+  script()
+
+
 })

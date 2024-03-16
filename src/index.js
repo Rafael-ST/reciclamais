@@ -4,5 +4,6 @@ import '@/css/font-awesome.min.css';
 import '@/css/animate.css';
 
 //ready scripts
-import '@/js/modules/ready';
 import '@/js/vendors/glowCookies';
+import '@/js/vendors/jquery.mask.min';
+import '@/js/modules/ready';

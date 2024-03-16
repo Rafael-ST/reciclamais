@@ -74,5 +74,20 @@ export const script = () => {
 
     checkPath(pathArray)
 
+    let maskBhavior = (val) => {
+        return val.replace(/\D/g, '').length === 9 ? '00000-0000' : '0000-00009';
+      },
+      optionTel = {
+        onKeyPress: function(val, e, field, options) {
+          field.mask(maskBhavior.apply({}, arguments), options);
+        }
+    }
+
+    //mask
+    $('#id_telefone').mask(maskBhavior, optionTel);
+    $('#id_cpf').mask('000.000.000-00');
+    $('#id_cnpj_condominio').mask('00.000.000/0000-00');
+    $('#id_cep').mask('00.000-000');
+
   })($)
 }

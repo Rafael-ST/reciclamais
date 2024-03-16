@@ -2,165 +2,347 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-    <h1>Cadastro</h1>
-    <div class="card card-form">
-        <form method="POST" action="{% url 'cadastro' %}" id="msform" class="post-form formMain formMainFisica form formAtuaDados">
-            {% csrf_token %}
-            <h2>
-                <b class="text-purple text-capitalize">Nome do Condomínio:</b> <span class="text-black text-capitalize">NOme</span>
-            </h2>
-            <!-- progressbar -->
-            <ul id="progressbar-logged">
-                <li class="active" id="account"><strong class="d-none d-sm-block">Dados Pessoais</strong></li>
-                <li id="confirm"><strong class="d-none d-sm-block">Finalizar</strong></li>
-            </ul>
-            <!--/progressbar -->
-    
-            <!--dados pessoais-->
-            <fieldset>
-                <div class="form-card">
-                    <!-- formulario pessal core-->
-    
-                    <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
-                    <div class="form-row">
-                        <div class="col-lg-3 col-md-12">
-                            {{ form.cnpj_condominio|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.nome|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.ddd|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.telefone|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.whatsapp|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-10 col-md-12">
-                            {{ form.email|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.qtd_habitacional|as_crispy_field }}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.turno|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.tipo_pix|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.chave_pix|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.observacao|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.indicacao|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.responsavel|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.nome_responsavel|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.contato_responsavel|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.cep|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.logradouro|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.numero|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.complemento|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.bairro|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.ponto_referencia|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.dias_semana|as_crispy_field }}
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            {{ form.zelador|as_crispy_field }}
-                        </div>
-                    </div>
-                    
-                </div>
-                <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
-                <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
-                <button type="submit" class="btn-success btn btnSubmit">
-                    <span class="txtHideEviando">
-                        Enviar
-                        <i class="icon-paper-plane icons mr-1"></i>
-                    </span>
-                    <span class="txtEnviando">Enviando...</span>
-                    <span class="txtEnviando">
-                        <img class="img" alt="" width="25"
-                            src="{% static '/img/loading.gif' %}" />
-                    </span>
-                </button>
-            </fieldset>
-            <!--/dados pessoais-->
-            <!--dados Educacionais-->
-            <fieldset>
-                <div class="form-card">
-                    <h2 class="fs-title">Dados Educacionais</h2>
-                    <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
-                    <hr class="my-1">
-    
-                </div>
-                <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
-                <input type="button" name="previous" class="previous btn btnYellow btn-warning" value="Anterior" />
-                <input type="button" name="next" class="next btn btn-primary" value="Próximo" />
-            </fieldset>
-            <!--/dados Educacionais-->
-            <!--dados complementares-->
-            <fieldset>
-                <div class="form-card">
-                    <h2 class="fs-title">Dados Complementares</h2>
-                    <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
-                    <hr class="my-1">
-    
-                </div>
-                <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
-                <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
-                <input type="button" name="next" class="next btn btn-primary" value="Próximo" />
-            </fieldset>
-            <!--/dados complementares-->
-            <!--finalizar-->
-            <fieldset>
-                <div class="form-card">
-                    <h2 class="fs-title">Enviar</h2>
-                    <hr class="my-1">
-                    <div class="row">
-                        <div class="col-12">
+<section class="s-content bg-success text-center">
+    <h1 class="text-white">Cadastro de condomínio</h1>
+</section>
+    <div class="container">
+        <div class="card card-form">
+            <form method="POST" action="{% url 'cadastro' %}" 
+            id="msform" class="post-form formMain formMainFisica form formAtuaDados needs-validation">
+                {% csrf_token %}
+                <!-- progressbar -->
+                <!-- <ul id="progressbar-logged">
+                    <li class="active" id="account"><strong class="d-none d-sm-block">Dados do condomínio</strong></li>
+                    <li id="confirm"><strong class="d-none d-sm-block">Finalizar</strong></li>
+                </ul> -->
+                <!--/progressbar -->
+        
+                <!--dados pessoais-->
+                    <fieldset>
+                        <div class="form-card">
+                            <!-- formulario pessal core-->
+
+                            <h3 class="text-cGreen">Dados do condomínio</h3>
+                            <hr>
+            
+                            <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-9">
+                                    {{ form.cnpj_condominio|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12 position-relative div-password">
+                                    {{ form.senha|as_crispy_field }}
+                                    <i class="fa fa-eye position-absolute eye-password" aria-hidden="true"></i>
+                                    <p class="error-message" id="error"></p>
+                                </div>
+                                <div class="col-lg-4 col-md-12 position-relative div-password2">
+                                    {{ form.senha2|as_crispy_field }}
+                                    <i class="fa fa-eye position-absolute eye-password2" aria-hidden="true"></i>
+                                    <p class="error-message" id="error2"></p>
+                                </div>
+                                <div class="col-lg-4 col-md-12 alert-message d-none">
+                                    <div class="alert-message mt-3">
+                                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                            <i class="text-danger fa fa-alert"></i>
+                                            <div id="error-confirm-password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.nome|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.email|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2">
+                                    {{ form.ddd|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-4 col-md-10">
+                                    {{ form.telefone|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-3 col-md-12">
+                                    {{ form.whatsapp|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div  class="col-lg-3 mb-3">
+                                    <label class="form-label requiredField">
+                                       Existe zelador?<span class="asteriskField">*</span>
+                                    </label>
+                                    <div class="chiller_cb">
+                                       <div class="form-check form-check-inline div_radioZelador1">
+                                          <input type="radio" class="form-check-input" 
+                                          name="existeZelador" value="0" id="zeladorInline" required="">
+                                          <label for="zeladorInline" class="form-check-label text-black">
+                                             Sim
+                                          </label>
+                                       </div>
+                                       <div class="form-check form-check-inline div_radioZelador0">
+                                          <input type="radio" class="form-check-input" name="existeZelador" 
+                                          value="0" id="zeladorInline2" required="">
+                                          <label for="zeladorInline2" class="form-check-label text-black">
+                                             Não
+                                          </label>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 d-none" id="div_zelador">
+                                    {{ form.zelador|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.turno|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div>
+                                        <label class="form-label requiredField">
+                                            Dias da semana?<span class="asteriskField">*</span>
+                                         </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input type="checkbox" class="form-check-input" 
+                                       name="dias_semana" value="0" id="id_dias_semana_0">
+                                       <label for="id_dias_semana_0" class="form-check-label text-black">
+                                       SEG
+                                       </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="1" id="id_dias_semana_1">
+                                       <label for="id_dias_semana_1" class="form-check-label text-black">
+                                       TER
+                                       </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="2" id="id_dias_semana_2">
+                                       <label for="id_dias_semana_2" class="form-check-label text-black">
+                                       QUA
+                                       </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="3" id="id_dias_semana_3">
+                                       <label for="id_dias_semana_3" class="form-check-label text-black">
+                                       QUI
+                                       </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="4" id="id_dias_semana_4">
+                                       <label for="id_dias_semana_4" class="form-check-label text-black">
+                                       SEX
+                                       </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="5" id="id_dias_semana_5">
+                                       <label for="id_dias_semana_5" class="form-check-label text-black">
+                                       SAB
+                                       </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-cGreen">Dados endereço do condomínio</h3>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12">
+                                    {{ form.cep|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-7 col-md-12">
+                                    {{ form.logradouro|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-2 col-md-12">
+                                    {{ form.numero|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    {{ form.complemento|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-3 col-md-12">
+                                    {{ form.bairro|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12">
+                                    {{ form.ponto_referencia|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <h3 class="text-cGreen">Dados de bonificação</h3>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 mb-3">
+                                    <div>
+                                        <label class="form-label requiredField">
+                                            Aceita participar do programa de bonificação?<span class="asteriskField">*</span>
+                                         </label>
+                                    </div>
+                                    <div class="form-check form-check-inline" id="idBonificao0">
+                                       <input type="radio" class="form-check-input" name="bonificacao" value="0" id="id_bonificacao_0" required="" data-gtm-form-interact-field-id="2">
+                                       <label for="id_bonificacao_0" class="form-check-label text-black">
+                                       Sim
+                                       </label>
+                                    </div>
+                                    <div class="form-check form-check-inline" id="idBonificao1">
+                                       <input type="radio" class="form-check-input" name="bonificacao" value="0" id="id_bonificacao_1" required="" data-gtm-form-interact-field-id="3">
+                                       <label for="id_bonificacao_1" class="form-check-label text-black">
+                                       Não, aceito que o valor seja revertido para os catadores de Fortaleza
+                                       </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="div_bonificacao" class="row div_bonificacao">
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.tipo_pix|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.chave_pix|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <h3 class="text-cGreen">Dados do responsável</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.responsavel|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.nome_responsavel|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    {{ form.contato_responsavel|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    {{ form.observacao|as_crispy_field }}
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    {{ form.indicacao|as_crispy_field }}
+                                </div>
+
+                                <div class="col-12">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkTermos">
+                                    <label class="form-check-label" for="checkTermos">
+                                      Li e Aceito os <a href="#" class="linkLista" data-bs-toggle="modal" data-bs-target="#exampleModal">Termos de Uso</a>
+                                    </label>
+                                    <span></span>
+                                </div>
+                            </div>
 
                         </div>
+
+                        
+                        <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
+                        <!-- <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
+                        <input type="button" name="next" class="next btn btn-primary" value="Próximo" /> -->
+                        <button type="submit" class="btn-success btn btnSubmit">
+                            <span class="txtHideEviando">
+                                Enviar
+                                <i class="icon-paper-plane icons mr-1"></i>
+                            </span>
+                            <span class="txtEnviando">Enviando...</span>
+                            <span class="txtEnviando">
+                                <img class="img" alt="" width="25"
+                                    src="{% static '/img/loading.gif' %}" />
+                            </span>
+                        </button>
+
+                    </fieldset>
+                <!--/dados pessoais-->
+                <!--dados Educacionais-->
+                    <fieldset>
+                        <div class="form-card">
+                            <h2 class="fs-title">Dados do endereço</h2>
+                            <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                            <hr class="my-1">
+
+                            
+            
+                        </div>
+                        <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
+                        <input type="button" name="previous" class="previous btn btnYellow btn-warning" value="Anterior" />
+                        <button type="submit" class="btn-success btn btnSubmit">
+                            <span class="txtHideEviando">
+                                Enviar
+                                <i class="icon-paper-plane icons mr-1"></i>
+                            </span>
+                            <span class="txtEnviando">Enviando...</span>
+                            <span class="txtEnviando">
+                                <img class="img" alt="" width="25"
+                                    src="{% static '/img/loading.gif' %}" />
+                            </span>
+                        </button>
+                    </fieldset>
+                <!--/dados Educacionais-->
+                <!--dados complementares-->
+                <fieldset>
+                    <div class="form-card">
+                        <h2 class="fs-title">Dados Complementares</h2>
+                        <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                        <hr class="my-1">
+        
                     </div>
-                </div>
-                <input type="button" name="previous" class="previous btn-warning btn btnYellow" value="Anterior" />
-                <button type="submit" class="btn-success btn btnSubmit">
-                    <span class="txtHideEviando">
-                        Enviar
-                        <i class="icon-paper-plane icons mr-1"></i>
-                    </span>
-                    <span class="txtEnviando">Enviando...</span>
-                    <span class="txtEnviando">
-                        <img class="img" alt="" width="25"
-                            src="{% static '/img/loading.gif' %}" />
-                    </span>
-                </button>
-            </fieldset>
+                    <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
+                    <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
+                    <input type="button" name="next" class="next btn btn-primary" value="Próximo" />
+                </fieldset>
+                <!--/dados complementares-->
+                <!--finalizar-->
+                <fieldset>
+                    <div class="form-card">
+
+
+                        <h2 class="fs-title">Enviar</h2>
+                        <hr class="my-1">
+                        <div class="row">
+                            <div class="col-12">
+    
+                            </div>
+                        </div>
+                    </div>
+                    <input type="button" name="previous" class="previous btn-warning btn btnYellow" value="Anterior" />
+                    <button type="submit" class="btn-success btn btnSubmit">
+                        <span class="txtHideEviando">
+                            Enviar
+                            <i class="icon-paper-plane icons mr-1"></i>
+                        </span>
+                        <span class="txtEnviando">Enviando...</span>
+                        <span class="txtEnviando">
+                            <img class="img" alt="" width="25"
+                                src="{% static '/img/loading.gif' %}" />
+                        </span>
+                    </button>
+                
+                </fieldset>
+            </form> 
+        </div>
+    </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <p>.</p>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
     
 {% endblock %}

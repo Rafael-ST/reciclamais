@@ -143,7 +143,7 @@
 #progressbar li.active:before,
 #progressbar-logged li.active:after,
 #progressbar-logged li.active:before{
-    background: $purple;
+    background: $green;
 }
 
 .asteriskField{
@@ -154,7 +154,7 @@
 
     #progressbar li.active:after,
     #progressbar li.active:before{
-        background: $blue;
+        background: $green;
     }
 
     #progressbar #parceiro:before{
@@ -175,7 +175,7 @@
     }
 
     .form-control-file{
-        border: 1px dotted $blue;
+        border: 1px dotted $green;;
         padding: 10px;
     }
     input[type='file']{
@@ -208,7 +208,7 @@
     .card-form__lista{
         font-size: .95rem;
         list-style: none;
-        border-left: 5px solid $purple;
+        border-left: 5px solid $green;
         padding-left: 10px;
         li{
             color: $gray;
@@ -279,91 +279,39 @@
     border-color: #dc3545 !important;
 }
 
-//termos de uso
-.termosUso{
-    height: 350px;
-    overflow-y: scroll;
+
+.div-password, .div-password2{
+    i{
+        top: 45px;
+        right: 25px;
+        cursor: pointer;
+        &:hover{
+            opacity: .75;
+        }
+    }
+    .error-message{
+        color: $red;
+        font-size: small;
+    }
 }
 
-/*custom checkboxes*/
-.span_pseudo, .chiller_cb span:before, .chiller_cb span:after {
-    content: "";
-    display: inline-block;
-    background: $white;
-    width: 0;
-    height: 0.2rem;
-    position: absolute;
-    transform-origin: 0% 0%;
-  }
+#div_id_senha, .div_id_senha2{
+    margin-bottom: 0px !important;
+}
 
-  .chiller_cb {
-    position: relative;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-  }
-  .chiller_cb input {
-    display: none;
-  }
-  .chiller_cb input:checked ~ span {
-    background: $purple;
-    border-color: $purple;
-  }
-
-  .formMainJuridica{
-      .chiller_cb input:checked ~ span {
-        background: $blue;
-        border-color: $blue;
-      }
-  }
-  .chiller_cb input:checked ~ span:before {
-    width: 1rem;
-    height: 0.15rem;
-    transition: width 0.1s;
-    transition-delay: 0.3s;
-  }
-  .chiller_cb input:checked ~ span:after {
-    width: 0.4rem;
-    height: 0.15rem;
-    transition: width 0.1s;
-    transition-delay: 0.2s;
-  }
-  .chiller_cb input:disabled ~ span {
-    background: $gray-600;
-    border-color: $gray-600;
-  }
-  .chiller_cb input:disabled ~ label {
-    color: $purple;
-    opacity: .7;
-  }
-  .chiller_cb input:disabled ~ label:hover {
-    cursor: default;
-  }
-  .chiller_cb label {
-    padding-left: 2rem;
-    position: relative;
-    z-index: 2;
+#idBonificao1, #idBonificao0, #div_radioZelador1, #div_radioZelador0 {
     cursor: pointer;
-    margin-bottom:0;
-  }
-  .chiller_cb span {
-    display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 2px solid $gray;
-    position: absolute;
-    left: 0;
-    transition: all 0.2s;
-    z-index: 1;
-    box-sizing: content-box;
-  }
-  .chiller_cb span:before {
-    transform: rotate(-55deg);
-    top: 1rem;
-    left: 0.37rem;
-  }
-  .chiller_cb span:after {
-    transform: rotate(35deg);
-    bottom: 0.35rem;
-    left: 0.2rem;
-	}
+}
+
+#msform{
+    label{
+        color: $green;
+    }
+    .form-control{
+        border: 1px solid $green;
+        &:focus{
+            box-shadow: 0 0 0 0.25rem rgba(20, 255, 239, 0.25)!important;
+        }
+    }
+}
+
