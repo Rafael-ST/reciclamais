@@ -51,9 +51,11 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'app.custom_cors_middleware.CustomCorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'csp.middleware.CSPMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -161,3 +163,14 @@ LOGIN_URL = 'loginurl'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+#CSP CONFIGS
+CSP_DEFAULT_SRC = ("'self'", 'https://www.googletagmanager.com', 'https://bootstrap.news/', 'https://encrypted-tbn0.gstatic.com')
+CSP_SCRIPT_SRC = ("'self'",'https://www.googletagmanager.com')
+CSP_STYLE_SRC = ("'self'", 'fonts.googleapis.com', 'fonts.gstatic.com', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css')
+CSP_FONT_SRC = ("'self'", 'fonts.googleapis.com', 'fonts.gstatic.com', 'data:')
+CSP_CONNECT_SRC = ("'self'", 'https://www.googletagmanager.com', 'https://www.google-analytics.com/')
+CSP_CHILD_SRC = ("'self'", 'digital.fortaleza.ce.gov.br', 'dev-digital.fortaleza.ce.gov.br', 'googletagmanager.com', 'web-fdigital-dev-cogect-fdigital-dev.apps.fortaleza.ce.gov.br', 'https://www.youtube.com', 'https://www.youtube.com')
+CSP_OBJECT_SRC = ("'self'", 'digital.fortaleza.ce.gov.br', 'dev-digital.fortaleza.ce.gov.br', 'googletagmanager.com', 'web-fdigital-dev-cogect-fdigital-dev.apps.fortaleza.ce.gov.br')
+CSP_FORM_ACTION = ("'self'", 'digital.fortaleza.ce.gov.br', 'dev-digital.fortaleza.ce.gov.br', 'web-fdigital-dev-cogect-fdigital-dev.apps.fortaleza.ce.gov.br')
+CSP_FRAME_ANCESTORS = ("'self'", 'digital.fortaleza.ce.gov.br', 'dev-digital.fortaleza.ce.gov.br', 'web-fdigital-dev-cogect-fdigital-dev.apps.fortaleza.ce.gov.br', 'https://www.youtube.com')
+CSP_INCLUDE_NONCE_IN = ['script-src-elem', 'script-src', 'style-src']
