@@ -1,11 +1,166 @@
 {% extends 'app/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
     <h1>Cadastro</h1>
-    <form action="#" action="{% url 'cadastro' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div class="mb-5 align-items-center">
-            <button class="btn btn-success mb-2 font-large" type="submit">Salvar</button>
-        </div>
-    </form>
+    <div class="card card-form">
+        <form method="POST" action="{% url 'cadastro' %}" id="msform" class="post-form formMain formMainFisica form formAtuaDados">
+            {% csrf_token %}
+            <h2>
+                <b class="text-purple text-capitalize">Nome do Condomínio:</b> <span class="text-black text-capitalize">NOme</span>
+            </h2>
+            <!-- progressbar -->
+            <ul id="progressbar-logged">
+                <li class="active" id="account"><strong class="d-none d-sm-block">Dados Pessoais</strong></li>
+                <li id="confirm"><strong class="d-none d-sm-block">Finalizar</strong></li>
+            </ul>
+            <!--/progressbar -->
+    
+            <!--dados pessoais-->
+            <fieldset>
+                <div class="form-card">
+                    <!-- formulario pessal core-->
+    
+                    <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                    <div class="form-row">
+                        <div class="col-lg-3 col-md-12">
+                            {{ form.cnpj_condominio|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.nome|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.ddd|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.telefone|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.whatsapp|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-10 col-md-12">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.qtd_habitacional|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.turno|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.tipo_pix|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.chave_pix|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.observacao|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.indicacao|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.responsavel|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.nome_responsavel|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.contato_responsavel|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.cep|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.logradouro|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.numero|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.complemento|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.bairro|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.ponto_referencia|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.dias_semana|as_crispy_field }}
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            {{ form.zelador|as_crispy_field }}
+                        </div>
+                    </div>
+                    
+                </div>
+                <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
+                <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
+                <button type="submit" class="btn-success btn btnSubmit">
+                    <span class="txtHideEviando">
+                        Enviar
+                        <i class="icon-paper-plane icons mr-1"></i>
+                    </span>
+                    <span class="txtEnviando">Enviando...</span>
+                    <span class="txtEnviando">
+                        <img class="img" alt="" width="25"
+                            src="{% static '/img/loading.gif' %}" />
+                    </span>
+                </button>
+            </fieldset>
+            <!--/dados pessoais-->
+            <!--dados Educacionais-->
+            <fieldset>
+                <div class="form-card">
+                    <h2 class="fs-title">Dados Educacionais</h2>
+                    <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                    <hr class="my-1">
+    
+                </div>
+                <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
+                <input type="button" name="previous" class="previous btn btnYellow btn-warning" value="Anterior" />
+                <input type="button" name="next" class="next btn btn-primary" value="Próximo" />
+            </fieldset>
+            <!--/dados Educacionais-->
+            <!--dados complementares-->
+            <fieldset>
+                <div class="form-card">
+                    <h2 class="fs-title">Dados Complementares</h2>
+                    <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                    <hr class="my-1">
+    
+                </div>
+                <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
+                <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
+                <input type="button" name="next" class="next btn btn-primary" value="Próximo" />
+            </fieldset>
+            <!--/dados complementares-->
+            <!--finalizar-->
+            <fieldset>
+                <div class="form-card">
+                    <h2 class="fs-title">Enviar</h2>
+                    <hr class="my-1">
+                    <div class="row">
+                        <div class="col-12">
+
+                        </div>
+                    </div>
+                </div>
+                <input type="button" name="previous" class="previous btn-warning btn btnYellow" value="Anterior" />
+                <button type="submit" class="btn-success btn btnSubmit">
+                    <span class="txtHideEviando">
+                        Enviar
+                        <i class="icon-paper-plane icons mr-1"></i>
+                    </span>
+                    <span class="txtEnviando">Enviando...</span>
+                    <span class="txtEnviando">
+                        <img class="img" alt="" width="25"
+                            src="{% static '/img/loading.gif' %}" />
+                    </span>
+                </button>
+            </fieldset>
+    
 {% endblock %}
