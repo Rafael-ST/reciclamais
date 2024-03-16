@@ -5,10 +5,11 @@ TURNO = (
 )
 
 CHAVE_PIX = (
-    ('0', u'CPF ou CNPJ'),
-    ('1', u'Email'),
-    ('2', u'Número telefônico'),
-    ('3', u'Chave Aleatória')
+    ('0', u'CPF'),
+    ('1', u'CNPJ'),
+    ('2', u'Email'),
+    ('3', u'Número telefônico'),
+    ('4', u'Chave Aleatória')
 )
 
 INDICACAO = (
