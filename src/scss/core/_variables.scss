@@ -69,4 +69,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   .text-#{$color-name} {
     color: $color-value !important;
   }
+
+  .border-#{$color-name} {
+    border-color: $color-value !important;
+  }
 }

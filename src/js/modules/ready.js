@@ -4,6 +4,7 @@ import { fontSize } from './fontSize'
 import { scrollFunc } from './scroll'
 import { redirect } from './redirect'
 import { mobile } from './mobile'
+import { accordionarrowspin } from './accordionarrowspin'
 
 //vendors
 import WOW from'@/js/vendors/wow';
@@ -34,6 +35,8 @@ ready(function () {
 
   //redirect
   redirect()
+
+  accordionarrowspin();
 
   //bootstrap
   initBootstrap({
