@@ -5,6 +5,7 @@ from django.contrib import auth, messages
 from app.forms import CondominioForm, ContatoForm
 from utils.email import send_email_in_thread
 from django.contrib import messages
+from app.models import Duvida
 
 def index(request):
     return render(request, 'app/index.html')
@@ -54,7 +55,8 @@ def faleconosco(request):
     return render(request, 'app/faleconosco.html', {'form': form})
 
 def duvidasfrequentes(request):
-    return render(request, 'app/duvidasfrequentes.html')
+    duvidas = Duvida.objects.all()
+    return render(request, 'app/duvidasfrequentes.html', {'duvidas': duvidas})
 
 def areadocondominio(request):
     return render(request, 'app/areadocondominio.html')
