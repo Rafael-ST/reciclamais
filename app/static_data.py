@@ -36,5 +36,5 @@ DIAS_SEMANA = (
 
 BONIFICACAO = (
     ('0', u'Desejo participar do programa de bonificação'),
-    ('0', u'Desejo doar os recicláveis para associações de catadores abrindo mão da bonificação')
+    ('1', u'Desejo doar os recicláveis para associações de catadores abrindo mão da bonificação')
 )
