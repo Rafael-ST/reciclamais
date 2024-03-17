@@ -46,7 +46,7 @@ def faleconosco(request):
             assunto = form.cleaned_data['assunto']
             msg = form.cleaned_data['mensagem']
             mensagem = f'{nome}<br>{msg}'
-            send_email_in_thread('fortbilingue@sis.fortaleza.ce.gov.br', assunto, 'Mensagem do Fortaleza Bilingue', mensagem, email)
+            send_email_in_thread('reciclamais@fortaleza.ce.gov.br', assunto, 'Mensagem do Fortaleza Bilingue', mensagem, email)
             messages.success(request, 'Mensagem enviada com sucesso')
             form = ContatoForm()
         else:
