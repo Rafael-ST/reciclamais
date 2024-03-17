@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Área do condomínio</section>
+
+<section class="my-5">
+        <div class="row my-5 m-4">
+                <div class="col-12 offset-md-1 col-md-4 d-flex flex-column justify-content-center gap-2">
+                        <img class="img-fluid" src="{% static 'images/imagens-condominio.png' %}" alt="imagens condominio" />
+                </div>
+                <div class="col-12 offset-md-2 col-md-4 order-md-first d-flex justify-content-center align-items-center">
+                        <p class="fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                </div>
+              </div>
+</section>
+
+<section class="my-5">
+        <div class="d-flex justify-content-center align-items-center"> <span class="cadastro-alert p-5 m-5 rounded-3">Para participar você precisa fazer o cadastro do seu condomínio</span></div>
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-5">
+                <div class="rounded-4 border-start border-5 border-cOrange shadow d-flex flex-column justify-content-center align-items-center p-4">
+                        <img class="mb-2 p-2" src="{% static 'images/login_icon.png' %}" alt="icone de login" width="100" />
+                        <span class="p-2 text-cOrange">Login para condominio</span>
+                </div>
+                <div class="rounded-4 border-start border-5 border-cGreen shadow d-flex flex-column justify-content-center align-items-center p-4">
+                        <img class=" mb-2 p-2" src="{% static 'images/cadastro_icon.png' %}" alt="icone de cadastro" width="100" />
+                        <span class="p-2 text-cGreen">Cadastro para condominio</span>
+                </div>
+        </div>
+</section>
+{% endblock %}
