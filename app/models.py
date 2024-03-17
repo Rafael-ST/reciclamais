@@ -29,7 +29,7 @@ class Bairro(BaseModel):
 
 class Condominio(BaseModel):
     nome = models.CharField(verbose_name='Nome do Condomínio', max_length=100)
-    cnpj_condominio = models.CharField(max_length=30, verbose_name='CNPJ Condomínio', validators=[validate_CNPJ], unique='True', null=True)
+    cnpj_condominio = models.CharField(max_length=30, verbose_name='CNPJ Condomínio', unique='True', null=True)
     ddd = models.PositiveIntegerField(verbose_name='DDD', validators=[MinValueValidator(10), MaxValueValidator(99)])
     telefone = models.CharField(verbose_name='Telefone', max_length=20)
     whatsapp = models.BooleanField(verbose_name='É Whatsapp?')
