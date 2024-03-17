@@ -56,6 +56,9 @@ def faleconosco(request):
 def duvidasfrequentes(request):
     return render(request, 'app/duvidasfrequentes.html')
 
+def areadocondominio(request):
+    return render(request, 'app/areadocondominio.html')
+
 @login_required
 def teste_login(request):
     return render(request, 'app/teste_login.html')
