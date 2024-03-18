@@ -27,7 +27,6 @@ def cadastro(request):
             operador_group = Group.objects.get(name='Condominio')
             operador_group.user_set.add(admin_user)
             return redirect('cadastro_success')
-            # form = CondominioForm()
     else:
         form = CondominioForm()
     return render(request, 'app/cadastro.html', {'form': form})
