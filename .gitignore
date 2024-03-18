@@ -4,11 +4,8 @@ media/
 /openshift/
 db/
 venv/
-db/
-db.sqlite3
 .env
 node_modules/
-_db_.sqlite3_
 node_modules/
 !/Dockerfile
 !/Dockerfile.prod
