@@ -19,22 +19,30 @@
         </div>
       </div>
       <div class="col-12 offset-md-2 col-md-4 order-md-first">
-        <form>
+        {% if messages %}
+                {% for message in messages %}
+                  <div  {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}> {{ message }} </div>
+                {% endfor %}
+              {% endif %}
+              <p>{{ form.errors }} </p>
+              <p>{{ form.non_field_errors }}</p>
+        <form action="" method="POST">
+          {% csrf_token %}
           <div class="mb-3">
             <label for="Nome" class="form-label text-cGreen">Nome</label>
-            <input type="text" class="form-control border-cGreen" id="Nome" aria-describedby="Nome" />
+            <input type="text" name="nome" class="form-control border-cGreen" id="Nome" aria-describedby="Nome" />
           </div>
           <div class="mb-3">
             <label for="Email" class="form-label text-cGreen">Email</label>
-            <input type="text" class="form-control border-cGreen" id="Email" aria-describedby="Email" />
+            <input type="text" name="email" class="form-control border-cGreen" id="Email" aria-describedby="Email" />
           </div>
           <div class="mb-3">
             <label for="Assunto" class="form-label text-cGreen">Assunto</label>
-            <input type="text" class="form-control border-cGreen" id="Assunto" aria-describedby="Assunto" />
+            <input type="text" name="assunto" class="form-control border-cGreen" id="Assunto" aria-describedby="Assunto" />
           </div>
           <div class="mb-3">
             <label for="Mensagem" class="form-label text-cGreen">Mensagem</label>
-            <textarea rows="10" class="form-control border-cGreen" id="Mensagem" aria-describedby="Assunto"></textarea>
+            <textarea rows="10" name="mensagem" class="form-control border-cGreen" id="Mensagem" aria-describedby="mensagem"></textarea>
           </div>
 
           <button type="submit" class="btn bg-cGreen text-white">Enviar</button>

@@ -1,0 +1,23 @@
+.cadastro-alert {
+        background-color: #f8d149;
+}
+
+.condominio-link {
+        width: 80%;
+        cursor: pointer;
+}
+.condominio-link-center {
+        width: 80%;
+        cursor: pointer;
+}
+
+@media (min-width: 768px) {
+        .condominio-link {
+                width: 12vw;
+                height: 12vw;
+        }
+        .condominio-link-center {
+                width: 15vw;
+                height: 15vw;
+        }
+}

@@ -2,77 +2,30 @@
 {% load static %}
 {% block content %}
 <section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Dúvidas Frequentes</section>
+
 <section>
   <div class="d-flex justify-content-center align-items-center my-5 m-md-5">
     <div class="accordion w-75" id="accordionPanelsStayOpenExample">
-      
-      <!-- Primeiro Accordion -->
-      <div class="accordion-item border-0 mb-5">
-        <h2 class="accordion-header">
-          <button class="accordion-button rounded-4 shadow bg-white text-cOrange border-start border-5 border-cOrange" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-            <div class="d-flex justify-content-between w-100">
-              <div>Preciso pagar para usar?</div>
-              <div>
-                <img class="accordion-arrow-img" src="{% static 'images/accordion-arrow.png' %}" alt="seta" />
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-          <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">Não. O serviço é gratuito.</div>
-        </div>
-      </div>
-
       <!-- Segundo Accordion -->
-      <div class="accordion-item border-0 mb-5">
-        <h2 class="accordion-header">
-          <button class="accordion-button rounded-4 shadow bg-white text-cOrange border-start border-5 border-cOrange" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-            <div class="d-flex justify-content-between w-100">
-              <div>Dúvida 2?</div>
-              <div>
-                <img class="accordion-arrow-img" src="{% static 'images/accordion-arrow.png' %}" alt="seta" />
-              </div>
+      {% if duvidas %}
+        {% for duvida in duvidas %}
+          <div class="accordion-item border-0 mb-5">
+            <h2 class="accordion-header">
+              <button class="accordion-button rounded-4 shadow bg-white text-cOrange border-start border-5 border-cOrange" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-{{ forloop.counter0 }}" aria-expanded="true" aria-controls="panelsStayOpen-{{ forloop.counter0 }}">
+                <div class="d-flex justify-content-between w-100">
+                  <div>{{ duvida.pergunta }}</div>
+                  <div>
+                    <img class="accordion-arrow-img" src="{% static 'images/accordion-arrow.png' %}" alt="seta" />
+                  </div>
+                </div>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-{{ forloop.counter0 }}" class="accordion-collapse collapse {% if  forloop.counter0 == 0%}show{% endif %}">
+              <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">{{ duvida.resposta }}</div>
             </div>
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-          <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">Resposta 2.</div>
-        </div>
-      </div>
-
-      <!-- Terceiro Accordion -->
-      <div class="accordion-item border-0 mb-5">
-        <h2 class="accordion-header">
-          <button class="accordion-button rounded-4 shadow bg-white text-cOrange border-start border-5 border-cOrange" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
-            <div class="d-flex justify-content-between w-100">
-              <div>Dúvida 3?</div>
-              <div>
-                <img class="accordion-arrow-img" src="{% static 'images/accordion-arrow.png' %}" alt="seta" />
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-          <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">Resposta 3.</div>
-        </div>
-      </div>
-
-      <!-- Quarto Accordion -->
-      <div class="accordion-item border-0 mb-5">
-        <h2 class="accordion-header">
-          <button class="accordion-button rounded-4 shadow bg-white text-cOrange border-start border-5 border-cOrange" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
-            <div class="d-flex justify-content-between w-100">
-              <div>Dúvida 4?</div>
-              <div>
-                <img class="accordion-arrow-img" src="{% static 'images/accordion-arrow.png' %}" alt="seta" />
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-          <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">Resposta 4.</div>
-        </div>
-      </div>
+          </div>
+        {% endfor %}
+      {% endif %}
 
     </div>
   </div>

@@ -5,6 +5,7 @@ import { scrollFunc } from './scroll'
 import { redirect } from './redirect'
 import { mobile } from './mobile'
 import { accordionarrowspin } from './accordionarrowspin'
+import { areadocondominio } from './areadocondominio'
 import { form } from './form'
 import { swiperModule } from './swiper'
 
@@ -42,6 +43,8 @@ ready(function () {
   redirect()
 
   accordionarrowspin();
+
+  areadocondominio();
 
   //bootstrap
   initBootstrap({

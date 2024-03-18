@@ -35,6 +35,6 @@ DIAS_SEMANA = (
 )
 
 BONIFICACAO = (
-    ('0', u'Sim'),
-    ('0', u'Não, aceito que o valor seja revertido para os catadores de Fortaleza')
+    ('0', u'Desejo participar do programa de bonificação'),
+    ('1', u'Desejo doar os recicláveis para associações de catadores abrindo mão da bonificação')
 )
