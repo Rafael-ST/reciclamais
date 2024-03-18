@@ -1,14 +1,17 @@
 import { acessibility } from './contrast'
-import { script } from './script'
 import { initBootstrap } from './bootstrap'
 import { fontSize } from './fontSize'
 import { scrollFunc } from './scroll'
 import { redirect } from './redirect'
-import { actions } from './actions'
 import { mobile } from './mobile'
+import { accordionarrowspin } from './accordionarrowspin'
+import { areadocondominio } from './areadocondominio'
+import { form } from './form'
+import { swiperModule } from './swiper'
 
 //vendors
 import WOW from'@/js/vendors/wow';
+import { script } from './script';
 
 /**
  * Run event after DOM is ready
@@ -25,8 +28,7 @@ function ready(fn) {
 
 ready(function () {
 
-  //script jquery
-  script()
+  let pathArray = window.location.pathname.split('/')
   
   //contrast
   acessibility()
@@ -40,29 +42,37 @@ ready(function () {
   //redirect
   redirect()
 
-  //actions
-  actions()
+  accordionarrowspin();
 
-  // countdown()
+  areadocondominio();
 
   //bootstrap
   initBootstrap({
     tooltip: true,
     popover: true,
     toasts: true,
-});
-
-
+  });
 
   new WOW().init({
     offset: 100,      // Define um offset de deslocamento em pixels
     mobile: false     // Desativa animações em dispositivos móveis
   });
 
-
-
   //mobile
   let mw = window.matchMedia('(max-width: 768px)')
   mobile(mw)
   mw.addListener(mobile)
+  
+  //script
+  script()
+
+  //form
+  form()
+
+  //swiper
+  if (pathArray[1] == '' || pathArray[1] == '#s-about') {
+    swiperModule()
+  }
+
+
 })

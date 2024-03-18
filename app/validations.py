@@ -61,7 +61,7 @@ def validate_CNPJ(value):
         int(value)
     except ValueError:
         raise ValidationError(error_messages['digits_only'])
-    if len(value) > 14:
+    if len(value) != 14:
         raise ValidationError(error_messages['max_digits'])
     orig_dv = value[-2:]
 

@@ -5,10 +5,11 @@ TURNO = (
 )
 
 CHAVE_PIX = (
-    ('0', u'CPF ou CNPJ'),
-    ('1', u'Email'),
-    ('2', u'Número telefônico'),
-    ('3', u'Chave Aleatória')
+    ('0', u'CPF'),
+    ('1', u'CNPJ'),
+    ('2', u'Email'),
+    ('3', u'Número telefônico'),
+    ('4', u'Chave Aleatória')
 )
 
 INDICACAO = (
@@ -22,4 +23,18 @@ INDICACAO = (
 RESPONSAVEL = (
     ('0', u'Síndico'),
     ('1', u'Empresa')
+)
+
+DIAS_SEMANA = (
+    ('0', u'SEG'),
+    ('1', u'TER'),
+    ('2', u'QUA'),
+    ('3', u'QUI'),
+    ('4', u'SEX'),
+    ('5', u'SAB')
+)
+
+BONIFICACAO = (
+    ('0', u'Desejo participar do programa de bonificação'),
+    ('1', u'Desejo doar os recicláveis para associações de catadores abrindo mão da bonificação')
 )

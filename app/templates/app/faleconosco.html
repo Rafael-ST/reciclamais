@@ -1,0 +1,53 @@
+{% extends 'app/base.html' %} {% load static %} {% block content %}
+  <section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Fale conosco</section>
+  <section>
+    <div class="row my-5 m-4">
+      <div class="col-12 offset-md-1 col-md-4 d-flex flex-column justify-content-center gap-2">
+        <img class="d-block align-self-center mb-4" src="{% static 'images/logo_recicloMais_2.png' %}" alt="Logo reciclo mais" width="256" />
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div>
+          <span>Fundação de Ciência, Tecnologia e Inovação de Fortaleza – Citinova</span><br />
+          <small>Rua dos Pacajús, nº 33 - Praia de Iracema, Fortaleza - CE <br /> CEP: 60060-520</small>
+        </div>
+        <div class="d-flex gap-2">
+          <img class="d-block align-self-center mb-4" src="{% static 'images/face.png' %}" alt="Logo facebook" />
+          <img class="d-block align-self-center mb-4" src="{% static 'images/insta.png' %}" alt="Logo instagram" />
+          <img class="d-block align-self-center mb-4" src="{% static 'images/whats.png' %}" alt="Logo whatsapp" />
+        </div>
+        <div class="d-flex justify-content-center">
+          <img class="d-block align-self-center mb-4" src="{% static 'images/logoPref.png' %}" alt="Logo prefeitura de fortaleza" width="200" />
+        </div>
+      </div>
+      <div class="col-12 offset-md-2 col-md-4 order-md-first">
+        {% if messages %}
+                {% for message in messages %}
+                  <div  {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}> {{ message }} </div>
+                {% endfor %}
+              {% endif %}
+              <p>{{ form.errors }} </p>
+              <p>{{ form.non_field_errors }}</p>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="Nome" class="form-label text-cGreen">Nome</label>
+            <input type="text" name="nome" class="form-control border-cGreen" id="Nome" aria-describedby="Nome" />
+          </div>
+          <div class="mb-3">
+            <label for="Email" class="form-label text-cGreen">Email</label>
+            <input type="text" name="email" class="form-control border-cGreen" id="Email" aria-describedby="Email" />
+          </div>
+          <div class="mb-3">
+            <label for="Assunto" class="form-label text-cGreen">Assunto</label>
+            <input type="text" name="assunto" class="form-control border-cGreen" id="Assunto" aria-describedby="Assunto" />
+          </div>
+          <div class="mb-3">
+            <label for="Mensagem" class="form-label text-cGreen">Mensagem</label>
+            <textarea rows="10" name="mensagem" class="form-control border-cGreen" id="Mensagem" aria-describedby="mensagem"></textarea>
+          </div>
+
+          <button type="submit" class="btn bg-cGreen text-white">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}

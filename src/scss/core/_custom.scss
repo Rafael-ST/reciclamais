@@ -47,6 +47,7 @@
 body {
   font-family: $font-body;
   color: $font-body_color;
+  font-weight: 500;
 }
 
 
@@ -71,7 +72,6 @@ h6 {
 }
 
 //button
-
 .btn{
   margin: 0.375rem;
     word-wrap: break-word;
@@ -88,24 +88,7 @@ h6 {
     }
 }
 
-.btn-rounded{
-  // @include border-radius(10rem);
-  // position: relative;
-  // overflow: hidden;
-  // cursor: pointer;
-  // -webkit-user-select: none;
-  // -moz-user-select: none;
-  // -ms-user-select: none;
-  // user-select: none;
-  // -webkit-tap-highlight-color: transparent;
+.swiper {
+  width: 100%;
 }
-
-.btn-success{
-  background: rgb(26,129,1);
-}
-
-.btn-warning{
-  background: rgb(246,214,40);
-}
-
 

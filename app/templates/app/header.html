@@ -1,6 +1,6 @@
 {% load static %} {% block content %}
 <!--acessibilidade-->
-<section class="s-acessibility d-none d-lg-block top-0 bg-yellow">
+<section class="s-acessibility d-none d-lg-block top-0">
   <div class="app-acessibilidade">
     <div class="container">
       <div class="row align-items-center">
@@ -126,16 +126,16 @@
   </div>
 </section>
 <!--/acessibilidade-->
-<header id="header-nav" class="s-navMain bg-yellow">
+<header id="header-nav" class="s-navMain ">
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <div class="navbar-brand d-flex align-items-center">
         <a href="/" class=" nav-logoMissao">
           <img
-          class="d-block mx-2 on-contrast-invert"
-          src="{% static 'images/logo.png' %}"
-          alt="Logo missãoverde"
-          width="110"
+          class="mx-2 on-contrast-invert logoRecicla"
+          src="{% static 'images/logo_recicloMais_2.png' %}"
+          alt="Logo reciclamais"
+          width="145"
         />
         </a>
         <a href="/" class="nav-logoPref">
@@ -143,7 +143,7 @@
             class="on-contrast-invert"
             src="{% static 'images/logoPref.png' %}"
             alt="Logo prefeitura de fortaleza"
-            width="160"
+            width="180"
           />
         </a>
       </div>
@@ -165,19 +165,16 @@
             <a class="nav-link mx-2 nav-home" aria-current="page" href="/">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2" href="/#s-about">Sobre</a>
+            <a class="nav-link mx-2" href="/#s-about">Conheça o recicla+</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 nav-ranking" href="/ranking?modo=aluno">Ranking</a>
+            <a class="nav-link mx-2 nav-condo" href="/ecoloja">Espaço do condomínio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 nav-ecoloja" href="/ecoloja">Ecoloja</a>
+            <a class="nav-link mx-2 nav-duvidas" href="/duvidasfrequentes">Dúvidas frequentes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 nav-aluno" href="/aluno">Aluno</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-2 nav-duvidas" href="/duvidas">Fale conosco</a>
+            <a class="nav-link mx-2 nav-fale" href="/faleconosco">Fale conosco</a>
           </li>
         </ul>
       </div>

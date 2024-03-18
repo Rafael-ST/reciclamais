@@ -40,13 +40,14 @@ export const script = () => {
 
     const checkPath = (path) => {
       if (path[1] !== '') {
-        $('.nav-about').attr('href', `${base_url}#s-initAbout`)
+        $('.nav-about').attr('href', `${base_url}#s-About`)
       } else {
+        $('.logoRecicla').hide();
         $('.nav-about').click(function (e) {
           e.preventDefault()
           $(this).addClass('.text-primary')
           $('.nav-home').removeClass('.text-primary')
-          scrollAnchor('s-initAbout')
+          scrollAnchor('s-about')
         })
       }
       window.location.pathname.split('/')
@@ -54,19 +55,19 @@ export const script = () => {
 
     const changeColor = () => {
       if (pathArray[1] == '') {
-        $('.nav-home').addClass('text-green-black')
+        $('.nav-home').addClass('text-cYellow')
       }
-      if (pathArray[1] == 'aluno') {
-        $('.nav-aluno').addClass('text-green-black')
+      if (pathArray[1] == 'cadastro') {
+        $('.nav-condo').addClass('text-cYellow')
       }
-      if (pathArray[1] == 'ecoloja') {
-        $('.nav-ecoloja').addClass('text-green-black')
+      if (pathArray[1] == 'duvidasfrequentes') {
+        $('.nav-duvidas').addClass('text-cYellow')
       }
       if (pathArray[1] == 'duvidas') {
-        $('.nav-duvidas').addClass('text-green-black')
+        $('.nav-duvidas').addClass('text-cYellow')
       }
-      if(urlExtense == 'ranking') {
-        $('.nav-ranking').addClass('text-green-black')
+      if(urlExtense == 'faleconosco') {
+        $('.nav-fale').addClass('text-cYellow')
       }
     }
 
@@ -74,100 +75,20 @@ export const script = () => {
 
     checkPath(pathArray)
 
-    let itemsMainDiv = '.MultiCarousel'
-    let itemsDiv = '.MultiCarousel-inner'
-    let itemWidth = ''
-
-    $('.leftLst, .rightLst').click(function () {
-      let condition = $(this).hasClass('leftLst')
-      if (condition) click(0, this)
-      else click(1, this)
-    })
-
-    ResCarouselSize()
-
-    $(window).resize(function () {
-      ResCarouselSize()
-    })
-
-    //this function define the size of the items
-    function ResCarouselSize() {
-      let incno = 0
-      let dataItems = 'data-items'
-      let itemClass = '.item'
-      let id = 0
-      let btnParentSb = ''
-      let itemsSplit = ''
-      let sampwidth = $(itemsMainDiv).width()
-      let bodyWidth = $('body').width()
-      $(itemsDiv).each(function () {
-        id = id + 1
-        let itemNumbers = $(this).find(itemClass).length
-        btnParentSb = $(this).parent().attr(dataItems)
-        itemsSplit = btnParentSb.split(',')
-        $(this)
-          .parent()
-          .attr('id', 'MultiCarousel' + id)
-
-        if (bodyWidth >= 1200) {
-          incno = itemsSplit[3]
-          itemWidth = sampwidth / incno
-        } else if (bodyWidth >= 992) {
-          incno = itemsSplit[2]
-          itemWidth = sampwidth / incno
-        } else if (bodyWidth >= 768) {
-          incno = itemsSplit[1]
-          itemWidth = sampwidth / incno
-        } else {
-          incno = itemsSplit[0]
-          itemWidth = sampwidth / incno
+    let maskBhavior = (val) => {
+        return val.replace(/\D/g, '').length === 9 ? '00000-0000' : '0000-00009';
+      },
+      optionTel = {
+        onKeyPress: function(val, e, field, options) {
+          field.mask(maskBhavior.apply({}, arguments), options);
         }
-        $(this).css({ transform: 'translateX(0px)', width: itemWidth * itemNumbers })
-        $(this)
-          .find(itemClass)
-          .each(function () {
-            $(this).outerWidth(itemWidth)
-          })
-
-        $('.leftLst').addClass('over')
-        $('.rightLst').removeClass('over')
-      })
     }
 
-    //this function used to move the items
-    function ResCarousel(e, el, s) {
-      let leftBtn = '.leftLst'
-      let rightBtn = '.rightLst'
-      let translateXval = ''
-      let divStyle = $(el + ' ' + itemsDiv).css('transform')
-      let values = divStyle.match(/-?[\d\.]+/g)
-      let xds = Math.abs(values[4])
-      if (e == 0) {
-        translateXval = parseInt(xds) - parseInt(itemWidth * s)
-        $(el + ' ' + rightBtn).removeClass('over')
+    //mask
+    $('#id_telefone').mask(maskBhavior, optionTel);
+    $('#id_cpf').mask('000.000.000-00');
+    $('#id_cnpj_condominio').mask('00.000.000/0000-00');
+    $('#id_cep').mask('00.000-000');
 
-        if (translateXval <= itemWidth / 2) {
-          translateXval = 0
-          $(el + ' ' + leftBtn).addClass('over')
-        }
-      } else if (e == 1) {
-        let itemsCondition = $(el).find(itemsDiv).width() - $(el).width()
-        translateXval = parseInt(xds) + parseInt(itemWidth * s)
-        $(el + ' ' + leftBtn).removeClass('over')
-
-        if (translateXval >= itemsCondition - itemWidth / 2) {
-          translateXval = itemsCondition
-          $(el + ' ' + rightBtn).addClass('over')
-        }
-      }
-      $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)')
-    }
-
-    //It is used to get some elements from btn
-    function click(ell, ee) {
-      let Parent = '#' + $(ee).parent().attr('id')
-      let slide = $(Parent).attr('data-slide')
-      ResCarousel(ell, Parent, slide)
-    }
   })($)
 }
