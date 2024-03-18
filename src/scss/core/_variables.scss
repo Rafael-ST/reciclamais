@@ -51,7 +51,8 @@ $font-body: 'Dosis', sans-serif;
 $custom-colors: (
   "cOrange": #E69600,
   "cGreen": #009074,
-  "cYellow": #FFF032
+  "cYellow": #FFF032,
+  "bGreen-light": #e7f7ed
 );
 
 $body-color: map-get($custom-colors, 'quaternary');

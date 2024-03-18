@@ -40,13 +40,14 @@ export const script = () => {
 
     const checkPath = (path) => {
       if (path[1] !== '') {
-        $('.nav-about').attr('href', `${base_url}#s-initAbout`)
+        $('.nav-about').attr('href', `${base_url}#s-About`)
       } else {
+        $('.logoRecicla').hide();
         $('.nav-about').click(function (e) {
           e.preventDefault()
           $(this).addClass('.text-primary')
           $('.nav-home').removeClass('.text-primary')
-          scrollAnchor('s-initAbout')
+          scrollAnchor('s-about')
         })
       }
       window.location.pathname.split('/')
@@ -54,19 +55,19 @@ export const script = () => {
 
     const changeColor = () => {
       if (pathArray[1] == '') {
-        $('.nav-home').addClass('text-green-black')
+        $('.nav-home').addClass('text-cYellow')
       }
-      if (pathArray[1] == 'aluno') {
-        $('.nav-aluno').addClass('text-green-black')
+      if (pathArray[1] == 'cadastro') {
+        $('.nav-condo').addClass('text-cYellow')
       }
-      if (pathArray[1] == 'ecoloja') {
-        $('.nav-ecoloja').addClass('text-green-black')
+      if (pathArray[1] == 'duvidasfrequentes') {
+        $('.nav-duvidas').addClass('text-cYellow')
       }
       if (pathArray[1] == 'duvidas') {
-        $('.nav-duvidas').addClass('text-green-black')
+        $('.nav-duvidas').addClass('text-cYellow')
       }
-      if(urlExtense == 'ranking') {
-        $('.nav-ranking').addClass('text-green-black')
+      if(urlExtense == 'faleconosco') {
+        $('.nav-fale').addClass('text-cYellow')
       }
     }
 

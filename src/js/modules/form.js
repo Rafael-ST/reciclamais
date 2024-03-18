@@ -1,4 +1,9 @@
+/* eslint-disable no-inner-declarations */
 const form = () => {
+
+    let pathArray = window.location.pathname.split('/')
+
+    if (pathArray[1] == 'cadastro') {
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     let forms = document.querySelectorAll('.needs-validation')
@@ -132,6 +137,8 @@ const form = () => {
         divNomeZelador.classList.add('d-block')
         divNomeZelador.classList.remove('d-none')
     })
+
+  }
 
 
 

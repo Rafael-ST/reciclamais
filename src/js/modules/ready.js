@@ -6,6 +6,7 @@ import { redirect } from './redirect'
 import { mobile } from './mobile'
 import { accordionarrowspin } from './accordionarrowspin'
 import { form } from './form'
+import { swiperModule } from './swiper'
 
 //vendors
 import WOW from'@/js/vendors/wow';
@@ -25,6 +26,8 @@ function ready(fn) {
 }
 
 ready(function () {
+
+  let pathArray = window.location.pathname.split('/')
   
   //contrast
   acessibility()
@@ -56,11 +59,17 @@ ready(function () {
   let mw = window.matchMedia('(max-width: 768px)')
   mobile(mw)
   mw.addListener(mobile)
+  
+  //script
+  script()
 
   //form
   form()
 
-  script()
+  //swiper
+  if (pathArray[1] == '' || pathArray[1] == '#s-about') {
+    swiperModule()
+  }
 
 
 })

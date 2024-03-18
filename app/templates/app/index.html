@@ -12,18 +12,6 @@
         aria-current="true"
         aria-label="Slide 1"
       ></button>
-      <!-- <button
-        type="button"
-        data-bs-target="#carouselBanners"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselBanners"
-        data-bs-slide-to="2"
-        aria-label="Slide 3"
-      ></button> -->
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -43,84 +31,345 @@
             class="carousel-itemLogo d-none d-md-block"
             alt="logo Reciclo mais"
           />
-          <h2 class="text-success">
+          <!-- <h2 class="text-success">
             Reciclagem e Educação <br />
-          </h2>
-          <p class="text-black lead">
-            Gincana de coleta seletiva 
-            de recicláveis de fortaleza
+          </h2> -->
+          <p class="text-black lead mt-4">
+            Plataforma para conectar  condomínios  <br />a
+            Reciclagem , deixando nossa cidade mais limpa
           </p>
           <a href="/#s-about" class="btn btn-success btn-rounded mt-2"> Saiba mais</a>
         </div>
       </div>
-      <!-- <div class="carousel-item">
-        <img
-          src="{% static 'images/bgOrange.jpg' %}"
-          class="d-block w-100 item-banner_desktop"
-          alt="banner rankeamento"
-        />
-        <img
-          src="{% static 'images/bgOrangeMobile.jpg' %}"
-          class="w-100 item-banner_mobile"
-          alt="banner rankeamento"
-        />
-        <div class="carousel-caption">
-          <img
-            src="{% static 'images/logo.png' %}"
-            class="carousel-itemLogo d-none d-md-block"
-            alt="logo missão verde"
-          />
-          <h2 class="text-green-black">
-            Confira sua pontuação <br />
-          </h2>
-          <p class="text-black lead">
-            Você já está participando? <br> consulte sua pontuação com o número da sua matrícula
-          </p>
-          <a href="/aluno" class="btn btn-success btn-rounded mt-2">Pontuação aluno</a>
-        </div>
-      </div> -->
     </div>
-    <!-- <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselBanners"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselBanners"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button> -->
   </div>
 </section>
 <!--/carousel-->
+
+
+<section id="s-about" class="s-content bg-bGreen-light s-about">
+  <h2 class="d-flex justify-content-center text-cGreen">Conheça o Recicla+</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-12 s-about__colImg">
+        <img
+        src="{% static 'images/modelo-about.png' %}"
+        class="img-fluid s-about__colImg--img"
+        alt="banner modelo mobile"
+      />
+      </div>
+      <div class="col-md-6 col-12 d-flex flex-column align-items-center justify-content-center s-about__colSwiper">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide w-100 p-5">
+              <h4 class="text-cGreen">
+                A Prefeitura de Fortaleza agora realiza coleta seletiva no seu condomínio. 
+              </h4>
+              <article class="">
+                <p class="lead">
+                  O <strong class="text-cGreen">Recicla Mais</strong> é o programa de coleta seletiva 
+                  porta-a-porta da Prefeitura de Fortaleza. 
+                  Através do Recicla Mais, os resíduos recicláveis do seu condomínio são coletados por caminhões e 
+                  destinados corretamente, <strong class="text-cGreen">gerando renda</strong> para os condomínios e associações de catadores. 
+                  O Recicla Mais promove uma nova cultura de <strong class="text-cGreen">sustentabilidade</strong> e 
+                  <strong class="text-cGreen">consciência ambiental</strong> em Fortaleza, 
+                  estimulando a economia circular.
+                </p>
+              </article>
+            </div>
+            <div class="swiper-slide w-100 p-5">
+              <h4 class="text-cGreen text-center">
+                Materiais do programa
+              </h4>
+              <div class="mt-5 w-75 mx-auto">
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Folder para moradores:</h6> <a href="" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Apresentação do programa:</h6> <a href="" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Descrição do programa:</h6> <a href="" download=""><i class="ms-1 fa fa-download "></i></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <a href="/#s-about" class="btn btn-success btn-rounded mt-2"> Cadastrar condomínio</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="d-flex justify-content-center text-cGreen my-5 py-3">Como funciona?</h2>
+    <div class="row d-flex justify-content-center mb-4">
+      <div class="col-3">
+        <p>Condomínio cadastra-se no Recicla Mais</p>
+        <img
+          src="{% static 'images/icon-building.png' %}"
+          class="img-fluid s-about__colImg--img"
+          alt="banner modelo mobile"
+          width="190"
+        />
+      </div>
+      <div class="col-3 text-center">
+        <p class="text-center">
+          A equipe da PMF valida o cadastro do condomínio, <br> 
+          e informar sobre o agendamento da coleta
+        </p>
+        <img
+          src="{% static 'images/icon-team.png' %}"
+          class="img-fluid s-about__colImg--img"
+          alt="banner modelo mobile"
+          width="190"
+        />
+      </div>
+      <div class="col-3">
+        <p class="text-center">
+          O condomínio recebe a visita do agente ambiental para entrega <br>
+          do kit coleta seletiva e orientações sobre a separação dos recicláveis
+        </p>
+        <img
+          src="{% static 'images/icon-coleta.png' %}"
+          class="img-fluid s-about__colImg--img"
+          alt="banner modelo mobile"
+          width="190"
+        />
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-3">
+        <p class="text-center">A coleta dos recicláveis é realizada conforme o agendamento</p>
+        <img
+          src="{% static 'images/icons-caminhao.png' %}"
+          class="img-fluid s-about__colImg--img"
+          alt="banner modelo mobile"
+          width="190"
+        />
+      </div>
+      <div class="col-3 text-center">
+        <p class="text-center">A coleta dos recicláveis é realizada conforme o agendamento</p>
+        <img
+          src="{% static 'images/icon-money.png' %}"
+          class="img-fluid s-about__colImg--img"
+          alt="banner modelo mobile"
+          width="190"
+        />
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-content s-coleta bg-cOrange pb-0">
+  <h2 class="d-flex justify-content-center text-cYellow mb-4">O que coletamos?</h2>
+  <div class="container pb-0">
+    <div class="row">
+      <div class="col-md-6 col-12 s-about__colImg">
+        <img
+        src="{% static 'images/duvida.png' %}"
+        class="img-fluid"
+        alt="banner modelo mobile"
+      />
+      </div>
+      <div class="col-md-6 col-12 d-flex flex-column align-items-center justify-content-center s-about__colSwiper">
+        <div class="w-75">
+          <h4 class="text-white">Veja o que seu condomínio pode entregar para a coleta 
+            <strong class="text-cGreen">"seletiva"</strong> 
+          </h4>
+        </div>
+        <div class="swiper mySwiper ">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide w-100 p-5">
+              <div class="d-flex  align-items-center s-coleta__card bg-white">
+                <div class="s-coleta__card--leftIntro">
+                  <h4 class="text-cGreen">Plástico</h4>
+                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                </div>
+                <div class="s-coleta__card--rightDescription">
+                  <ul>
+                    <li class="py-1">Plástico duro (potes de shampoo e outros)</li>
+                    <li class="py-1">PVC (tubos, conexões e sandálias plásticas)</li>
+                    <li class="py-1">Plástico mole (tubos, conexões e sandálias plásticas)</li>
+                    <li class="py-1">Pet (garrafas de água e refrigerante)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide w-100 p-5">
+              <div class="d-flex  align-items-center s-coleta__card bg-white">
+                <div class="s-coleta__card--leftIntro">
+                  <h4 class="text-cGreen">Papel</h4>
+                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                </div>
+                <div class="s-coleta__card--rightDescription">
+                  <ul>
+                    <li class="py-1">Papelão</li>
+                    <li class="py-1">Livros</li>
+                    <li class="py-1">Revistas</li>
+                    <li class="py-1">Jornais</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide w-100 p-5">
+              <div class="d-flex  align-items-center s-coleta__card bg-white">
+                <div class="s-coleta__card--leftIntro">
+                  <h4 class="text-cGreen">Vidro</h4>
+                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                </div>
+                <div class="s-coleta__card--rightDescription">
+                  <ul>
+                    <li class="py-1">Potes (embalagens de alimentos em conserva como azeitona e palmito) </li>
+                    <li class="py-1">Garrafas (embalagens de bebidas como vinho e long necks, azeite e molhos)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide w-100 p-5">
+              <div class="d-flex  align-items-center s-coleta__card bg-white">
+                <div class="s-coleta__card--leftIntro">
+                  <h4 class="text-cGreen">Metal</h4>
+                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                </div>
+                <div class="s-coleta__card--rightDescription">
+                  <ul>
+                    <li class="py-1">Ferro (latas de alimentos, panelas) </li>
+                    <li class="py-1">Aço inox (panelas)</li>
+                    <li class="py-1">Chumbo</li>
+                    <li class="py-1">Alumínio (latas de bebidas e alimentos)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide w-100 p-5">
+              <div class="d-flex  align-items-center s-coleta__card bg-white">
+                <div class="s-coleta__card--leftIntro">
+                  <h4 class="text-cGreen">Outro</h4>
+                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                </div>
+                <div class="s-coleta__card--rightDescription">
+                  <ul>
+                    <li class="py-1">Oléo (óleo vegetal guardado em garrafa PET)
+                      (como azeitona e palmito), </li>
+                    <li class="py-1">Isopor (usado para proteções) </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <p>
+          Tem outras dúvidas com relação a coleta agendamento e o Recicla +,
+          <br>
+          Acesse nossas <a href="/duvidasfrequentes" class="text-cYellow">dúvidas frequentes</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="s-content s-programas">
+  <div class="w-50 mx-auto text-center">
+    <img src="{% static 'images/logo-pref.png' %}"width="185" alt="" class="mx-auto">
+    <h4 class="d-flex justify-content-center text-center align-items-center text-cGreen mb-4">A Prefeitura de Fortaleza oferece 
+      outros serviços de incentivo à reciclagem, ao descarte correto do lixo (resíduos sólidos) e consulta de dados?</h4>
+  </div>
+  <div class="container">
+    <div class="swiper mySwiper2 my-5 py-5 px-3 ">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="s-programas__card card-mais">
+            <img src="{% static 'images/logo_maisFortaleza_col_hor.svg' %}"width="100" alt="" class="mx-auto mb-2">
+            <div class="card-body">
+              <h6 class="card-title my-2">Gerir de forma inovadora os resíduos sólidos de Fortaleza
+                e</h6>
+              <p class="card-text">Por meio do Programa Mais Fortaleza, a gestão municipal 
+                está investindo na política pública de manejo 
+                de resíduos sólidos, com foco na instalação de novos equipamentos e ativação 
+                de projetos para incentivar o comportamento correto da população quanto ao descarte do lixo, 
+                educação ambiental e coleta seletiva de materiais recicláveis.</p>
+              <a href="https://maisfortaleza.fortaleza.ce.gov.br/" target="_blank" class="card-link">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="s-programas__card card-reciclo">
+            <img src="{% static 'images/re-ciclo_comunicação-05.png' %}"width="120" alt="" class="mx-auto mb-2">
+            <div class="card-body">
+              <h6 class="card-title my-2">
+                Coleta seletiva porta a porta, inclusiva e com baixa emissão de carbono
+              </h6>
+              <p class="card-text">
+                O Re-ciclo é uma iniciativa pioneira da Prefeitura de Fortaleza, que emprega uma plataforma inovadora de coleta porta a 
+                porta de materiais recicláveis, onde catadores operam triciclos elétricos através de um 
+                sistema de micrologística eficiente. Além de fomentar a economia circular, 
+                o projeto visa fortalecer a inclusão social, ao engajar associações de catadores e 
+                estimular a geração de renda por meio da reciclagem.
+              </p>
+              <a href="https://www.reciclofortaleza.com.br/" target="_blank" class="card-link">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="s-programas__card card-dados">
+            <img src="{% static 'images/logo-dadosAbertos.png' %}"width="120" alt="" class="mx-auto mb-2">
+            <div class="card-body">
+              <h6 class="card-title my-2">Dados de Fortaleza para consulta pública</h6>
+              <p class="card-text">O programa de Dados Abertos da Prefeitura de Fortaleza visa promover a transparência e a participação cidadã,
+                 disponibilizando informações públicas de forma acessível e gratuita.</p>
+              <a href="https://dados.fortaleza.ce.gov.br/" target="_blank" class="card-link">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="s-programas__card card-missao">
+            <img src="{% static 'images/missao-verde.png' %}"width="120" alt="" class="mx-auto mb-2">
+            <div class="card-body">
+              <h6 class="card-title my-2">Reciclagem na rede de ensino de Fortaleza</h6>
+              <p class="card-text">
+                O programa Missão Verde, tem como objetivo promover a conscientização ambiental nas escolas, 
+                por meio da gincana de coleta de resíduos recicláveis. Além de contribuir com o meio ambiente, 
+                os alunos ainda concorrem a prêmios.
+              </p>
+              <a href="https://missaoverde.fortaleza.ce.gov.br/" target="_blank" class="card-link">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
 
 <!-- Parceiros-->
 <section id="anchorPar" class="s-content s-parceiros">
   <div class="container">
       <div class="row mb-5">
           <div class="col">
-              <h2 class="text-center mb-4 text-green-black">Parceiros</h2>
+              <h2 class="text-center mb-4 text-cGreen fs-1">Parceiros</h2>
           </div>
       </div>
-      <div class="row">
+      <div class="row d-flex justify-content-center">
 
-          {% for p in parceiros %}
-          <!--for loop div logo parceiros-->
-          <div class="col-6 col-lg-3 s-parceiros__block">
-              <a href="{{p.get_url}}" target="_blank">
-                  <img src="{{p.imagem.url}}" alt="logo parceiro" class="mb-3">
-              </a>
-          </div>
-          <!--/for loop div logo parceiros-->
-          {% endfor %}
+        <div class="col-6 col-lg-3 s-parceiros__block">
+          <a href="https://www.grupomarquise.com.br/negocio/ecofor/" target="_blank">
+              <img src="{% static 'images/ecofor-marca.jpg' %}" alt="logo parceiro" class="mb-3 img-fluid">
+            </a>
+        </div>
+        <div class="col-6 col-lg-3 s-parceiros__block">
+          <a href="https://madeiraplasticaecomax.com.br/" target="_blank">
+              <img src="{% static 'images/ecomax-3.png' %}" alt="logo parceiro" class="mb-3 img-fluid">
+            </a>
+        </div>
+        <div class="col-6 col-lg-3 s-parceiros__block">
+          <a href="" target="_blank">
+              <img src="{% static 'images/logo-redecatadores.jpg' %}" alt="logo parceiro" class="mb-3 img-fluid">
+            </a>
+        </div>
 
       </div>
   </div>
