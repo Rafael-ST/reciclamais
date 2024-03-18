@@ -1,5 +1,5 @@
 {% extends 'app/base.html' %} {% load static %} {% block content %}
-  <section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Fale conosco</section>
+  <section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Fale Conosco</section>
   <section>
     <div class="row my-5 m-4">
       <div class="col-12 offset-md-1 col-md-4 d-flex flex-column justify-content-center gap-2">
@@ -7,13 +7,13 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <div>
           <span>Fundação de Ciência, Tecnologia e Inovação de Fortaleza – Citinova</span><br />
-          <small>Rua dos Pacajús, nº 33 - Praia de Iracema, Fortaleza - CE <br /> CEP: 60060-520</small>
+          <small>Rua Tremembés, 2 - Praia de Iracema, Fortaleza - CE <br /> CEP: 60060-250</small>
         </div>
-        <div class="d-flex gap-2">
+        {% comment %} <div class="d-flex gap-2">
           <img class="d-block align-self-center mb-4" src="{% static 'images/face.png' %}" alt="Logo facebook" />
           <img class="d-block align-self-center mb-4" src="{% static 'images/insta.png' %}" alt="Logo instagram" />
           <img class="d-block align-self-center mb-4" src="{% static 'images/whats.png' %}" alt="Logo whatsapp" />
-        </div>
+        </div> {% endcomment %}
         <div class="d-flex justify-content-center">
           <img class="d-block align-self-center mb-4" src="{% static 'images/logoPref.png' %}" alt="Logo prefeitura de fortaleza" width="200" />
         </div>

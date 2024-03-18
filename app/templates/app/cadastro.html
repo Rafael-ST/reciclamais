@@ -2,12 +2,11 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-<section class="s-content bg-success text-center">
-    <h1 class="text-white">Cadastro de condomínio</h1>
-</section>
+<section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Cadastro condomínio</section>
+<section>
     <div class="container">
         <div class="card card-form">
-            <form method="POST" action="{% url 'cadastro' %}" 
+            <form method="POST" action="{% url 'cadastro_success' %}" 
             id="msform" class="post-form formMain formMainFisica form formAtuaDados needs-validation">
                 {% csrf_token %}
                 <!-- progressbar -->
@@ -244,15 +243,14 @@
                         <span class="msgError">verifique os campos <b class="text-danger">*obrigatórios</b> </span>
                         <!-- <input type="button" name="previous" class="previous btn btn-warning btnYellow" value="Anterior" />
                         <input type="button" name="next" class="next btn btn-primary" value="Próximo" /> -->
-                        <button type="submit" class="btn-success btn btnSubmit">
+                        <button type="submit" class="btn-success btn btnSubmit" disabled="true">
                             <span class="txtHideEviando">
                                 Enviar
-                                <i class="icon-paper-plane icons mr-1"></i>
                             </span>
                             <span class="txtEnviando">Enviando...</span>
                             <span class="txtEnviando">
                                 <img class="img" alt="" width="25"
-                                    src="{% static '/img/loading.gif' %}" />
+                                    src="{% static '/images/loading.gif' %}" />
                             </span>
                         </button>
 
@@ -261,7 +259,7 @@
                 <!--dados Educacionais-->
                     <fieldset>
                         <div class="form-card">
-                            <h2 class="fs-title">Dados do endereço</h2>
+                            <h4 class="fs-title">Dados do endereço</h4>
                             <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
                             <hr class="my-1">
 
@@ -286,7 +284,7 @@
                 <!--dados complementares-->
                 <fieldset>
                     <div class="form-card">
-                        <h2 class="fs-title">Dados Complementares</h2>
+                        <h4 class="fs-title">Dados Complementares</h4>
                         <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
                         <hr class="my-1">
         
@@ -299,9 +297,7 @@
                 <!--finalizar-->
                 <fieldset>
                     <div class="form-card">
-
-
-                        <h2 class="fs-title">Enviar</h2>
+                        <h4 class="fs-title">Enviar</h4>
                         <hr class="my-1">
                         <div class="row">
                             <div class="col-12">
@@ -309,41 +305,101 @@
                             </div>
                         </div>
                     </div>
-                    <input type="button" name="previous" class="previous btn-warning btn btnYellow" value="Anterior" />
-                    <button type="submit" class="btn-success btn btnSubmit">
+                    <!-- <input type="button" name="previous" class="previous btn-warning btn btnYellow" value="Anterior" /> -->
+                    <!-- <button type="submit" class="btn-success btn btnSubmit" disabled="true">
                         <span class="txtHideEviando">
                             Enviar
-                            <i class="icon-paper-plane icons mr-1"></i>
                         </span>
                         <span class="txtEnviando">Enviando...</span>
                         <span class="txtEnviando">
                             <img class="img" alt="" width="25"
-                                src="{% static '/img/loading.gif' %}" />
+                                src="{% static '/images/loading.gif' %}" />
                         </span>
-                    </button>
+                    </button> -->
                 
                 </fieldset>
             </form> 
         </div>
     </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p>.</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                <button type="button" class="btn btn-primary">Salvar mudanças</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Termos de Uso e Condições - Condomínio</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times text-danger" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-body">
+                <h4>1. Introdução</h4>
+                <p>A Prefeitura de Fortaleza oferta por meio do Projeto Recicla+, o serviço de coleta seletiva porta a porta municipal, por demanda, onde através do cadastro na plataforma virtual o responsável pelo condomínio (usuário) poderá agendar a coleta para o(s) endereço(s) que estejam aptos à participar do projeto. As coletas são gratuitas e realizadas com caminhões devidamente identificados. A adesão ao projeto junto da correta separação e entrega dos recicláveis poderão ser convertidas em bonificação em reais para o condomínio, as informações sobre coletas e bonificação poderão ser acompanhadas pela plataforma virtual.</p>
+                <h4>2. Serviço de Coleta</h4>
+                <p>As coletas acontecem exclusivamente de segunda-feira a sábado, entre 08:00 e 16:30, em dias úteis.</p>
+                <p>Somente serão aceitos resíduos recicláveis secos, a saber:</p>
+                <ul>
+                   <li>Papel (papelão, livros, revistas, jornais e embalagens longa vida);</li>
+                   <li>Plástico (plástico duro, embalagens de cosméticos, PVC, plástico mole, PET, isopor etc.);</li>
+                   <li>Metal (ferro, aço inox, chumbo, bronze e alumínio);</li>
+                   <li>Vidro (garrafas, potes, embalagens de conservas etc);</li>
+                   <li>Óleos e gorduras vegetais (armazenado em garrafa pet).</li>
+                </ul>
+                <p>A equipe de coleta NÃO coletará outros tipos de materiais, como por exemplo:</p>
+                <ul>
+                   <li>Resíduos da Construção Civil (RCC);</li>
+                   <li>Resíduos orgânicos (restos de comida e/ou poda);</li>
+                   <li>Resíduos volumosos;</li>
+                   <li>Rejeitos (lixo).</li>
+                </ul>
+                <p>Os resíduos recicláveis só serão coletados caso estejam acondicionados corretamente, no(s) big bag(s).</p>
+                <p>O(s) big bag(s) com os recicláveis devem estar armazenados em local apropriado no prédio e ser de fácil acesso pelo agente de coleta, de forma a não onerar os demais pontos da rota de coletas.</p>
+                <p>Os agentes de coleta poderão aguardar a entrega dos recicláveis, na tolerância máxima de 10 (dez) minutos de espera.</p>
+                <p>Os usuários poderão realizar o cadastro na plataforma virtual e solicitar o agendamento das coletas, uma confirmação de deferimento ou indeferimento do agendamento chegará por e-mail para o usuário. No momento do agendamento o usuário, caso tenha restrições de horário, poderá escolher entre o turno da manhã ou da tarde. Como as rotas são dinâmicas, não poderá ser escolhido um horário específico para a coleta.</p>
+                <h4>3. Responsabilidades do Condomínio (Usuário)</h4>
+                <p>3.1. Se responsabilizar por responder corretamente ao formulário de cadastro e solicitação de agendamento das coletas;</p>
+                <p>3.2. Aguardar o comunicado de deferimento ou indeferimento da solicitação de agendamento realizada;</p>
+                <p>3.3. Dispor de zelador ou outra pessoa que ficará responsável pela entrega dos recicláveis aos agentes da coleta;</p>
+                <p>3.4. Destinar os materiais secos, limpos e acondicionados corretamente (os materiais deverão estar no(s) big bag(s), no dia da coleta;</p>
+                <p>3.5. Não deverá misturar outros tipos de resíduos com os recicláveis, como restos de comida, Resíduos da Construção Civil (RCC), poda, resíduos volumosos ou rejeitos (lixo);</p>
+                <p>3.6. Manter uma comunicação respeitosa e não agressiva com os agentes ambientais e agentes de coleta responsáveis, por fazer a retirada dos resíduos sólidos recicláveis no condomínio, zelando pela ética e integridade;</p>
+                <p>3.7. Reportar à Central de Atendimento qualquer tipo de sugestão, reclamação ou elogio;</p>
+                <p>3.8. Informar na Plataforma virtual ou aplicativo Recicla+, as datas em que não deverão haver coletas em seu endereço, seja por motivos de viagens, mudança, bem como outros motivos.</p>
+                <h4>4. Responsabilidades do Fornecedor/Operador do Serviço</h4>
+                <p>4.1. Cumprir com as coletas previamente agendadas;</p>
+                <p>4.2. Destinar corretamente os resíduos recicláveis coletados;</p>
+                <p>4.3. Informar ao usuário com antecedência sobre as coletas que não poderão ser realizadas por questões operacionais ou logísticas;</p>
+                <p>4.4. Manter o sigilo dos dados cadastrais dos participantes;</p>
+                <p>4.5. Não compartilhar os dados pessoais dos participantes;</p>
+                <p>4.6. Realizar o atendimento aos usuários através da Central de Atendimento.</p>
+                <h4>5. Termos Legais e Condições Gerais</h4>
+                <p>O usuário deverá ter idade igual ou superior a 18 anos e ter o endereço de coleta do condomínio, localizado na área de abrangência do projeto, no município de Fortaleza.</p>
+                <p>O serviço de coleta porta a porta municipal ofertado através do Projeto Recicla+ é gratuito, estando disponível apenas para condomínios residenciais, sendo assim não é possível a utilização do serviço por grandes geradores, assim classificados pela Lei n. 10.340, de 28 de abril de 2015.</p>
+                <p>Não será tolerada qualquer forma de preconceito, assédio, bullying e incitação à violência.</p>
+                <p>As condutas que envolverem qualquer ação que tenha o objetivo de diminuir e/ou ofender alguém, especialmente os agentes ambientais e agentes de coleta, estão sujeitas à suspensão ou cancelamento do cadastro do usuário no Recicla+, sem aviso prévio e sem prejuízo da adoção de medidas judiciais cabíveis.</p>
+                <h4>6. Privacidade e Proteção de Dados</h4>
+                <p>No Recicla+, privacidade e segurança são prioridades e nos comprometemos com a transparência no tratamento de dados pessoais dos nossos usuários/ condomínios participantes.</p>
+                <p>Ao utilizar nossos serviços, você entende que são coletados pessoais nas formas descritas nesta Política, sob as normas da Constituição Federal de 1988 (art. 5º, LXXIX; e o art. 22º, XXX), das normas de Proteção de Dados (LGPD, Lei Federal 13.709/2018), das disposições consumeristas da Lei Federal 8.078/1990 e as demais normas do ordenamento jurídico brasileiro aplicáveis.</p>
+                <p>Os dados e informações coletados são utilizados de forma a viabilizar a prestação de serviços e aprimorar a experiência do usuário.</p>
+                <p>Os dados pessoais que o usuário deve fornecer são: CNPJ, nome do responsável, e-mail, endereço, telefone/whatsapp.</p>
+                <p>Esses dados são necessários para identificar o usuário (CNPJ e Nome do responsável e o endereço da coleta), bem como para a necessidade de confirmar o cadastro e demais tentativas de contato para os comunicados diversos (e-mail, endereço, telefone/whatsapp).</p>
+                <p>Dentre os dados pessoais cadastrados serão disponibilizados para os agentes da coleta apenas as informações que forem pertinentes à coleta, como: nome do condomínio, nome do responsável/zelador, endereço, observações e turno da coleta.</p>
+                <p>Assim, em consonância com a Lei Geral de Proteção de Dados, os dados só serão coletados, tratados e armazenados mediante prévio e expresso consentimento.</p>
+                <p>O consentimento deverá ser fornecido de forma específica para cada finalidade acima descrita, evidenciando o compromisso de legalidade, transparência e boa-fé da Prefeitura de Fortaleza para com seus usuários/ condomínios participantes.</p>
+                <p>Ao utilizar os serviços da Prefeitura de Fortaleza e fornecer dados pessoais, o usuário está ciente e consente com as disposições desta Política de Privacidade, além de conhecer seus direitos e como exercê-los.</p>
+                <p>A qualquer tempo e sem nenhum custo, o usuário poderá revogar seu consentimento.</p>
+                <p>É importante destacar que a revogação do consentimento para o tratamento dos dados pode implicar a impossibilidade da performance adequada de alguma funcionalidade do site ou mesmo da coleta dos recicláveis.</p>
+                <h4>7. Alterações nos Termos e Condições e Disposições Finais</h4>
+                <p>A atual versão da Política de Privacidade foi formulada e atualizada pela última vez em 07 de março de 2024.</p>
+                <p>A Prefeitura de Fortaleza se reserva ao direito de modificar essa Política de Privacidade a qualquer tempo, principalmente em função da adequação a eventuais alterações feitas em nossa plataforma virtual ou aplicativo ou em âmbito legislativo.</p>
+                <p>Eventuais alterações entrarão em vigor a partir da data de sua publicação em plataforma própria, e o usuário será comunicado.</p>
+                <p>Ao utilizar nossos serviços e fornecer seus dados pessoais após tais modificações, você às consente.</p>
+                <h4>8. Contato e Suporte</h4>
+                <p>A Prefeitura de Fortaleza disponibiliza o seguinte canal para que o usuário possa entrar em contato: Central 156.</p>                
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+        </div>
+    </div>
     
 {% endblock %}

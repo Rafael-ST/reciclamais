@@ -1,4 +1,21 @@
 {% extends 'app/base.html' %}
+{% load static %}
 {% block content %}
-    <h1>Redirect de cadastro</h1>
+<section class="section-title text-cGreen fs-1 d-flex align-items-center justify-content-center">Cadastro de Condomínio</section>
+
+<section class="my-5 d-flex justify-content-center">
+    <div class="card shadow col-10 col-md-6 px-2 px-md-5" >
+        <img class="d-block align-self-center mb-4 p-3" src="{% static 'images/logo_recicloMais.png' %}" alt="Logo reciclo mais" width="200" />
+        <div class="card-body">
+          <h5 class="card-title text-center mb-5">Condomínio pré cadastrado com sucesso</h5>
+          <p class="text-cGreen">Vamos verificar se já atendemos na sua área</p>
+          <p class="text-cGreen">Entraremos em contato para mais informações</p>
+          <p class="text-cGreen">Verifique seu email e telefone, pode ser necessário uma visita técnica </p>
+
+          <div class="d-flex justify-content-center">
+            <img class="d-block align-self-center my-4" src="{% static 'images/logoPref.png' %}" alt="Logo prefeitura de fortaleza" width="200" />
+          </div>
+        </div>
+      </div>
+</section>
 {% endblock %}

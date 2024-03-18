@@ -3,7 +3,7 @@
 <!--carousel-->
 <section class="s-banner">
   <div id="carouselBanners" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
+    <!-- <div class="carousel-indicators">
       <button
         type="button"
         data-bs-target="#carouselBanners"
@@ -12,7 +12,7 @@
         aria-current="true"
         aria-label="Slide 1"
       ></button>
-    </div>
+    </div> -->
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img
@@ -21,9 +21,9 @@
           alt="imagem banner verde"
         />
         <img
-          src="{% static 'images/bgGreenMobile.jpg' %}"
+          src="{% static 'images/bannerMobile.jpg' %}"
           class="w-100 item-banner_mobile"
-          alt="imagem banner verde"
+          alt="imagem banner banner mobile"
         />
         <div class="carousel-caption">
           <img
@@ -82,9 +82,9 @@
                 Materiais do programa
               </h4>
               <div class="mt-5 w-75 mx-auto">
-                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Folder para moradores:</h6> <a href="" download=""><i class="ms-1 fa fa-download "></i></a></div>
-                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Apresentação do programa:</h6> <a href="" download=""><i class="ms-1 fa fa-download "></i></a></div>
-                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Descrição do programa:</h6> <a href="" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Folder para moradores:</h6> <a href=""  target="_blank" rel="noopener noreferrer"  data-bs-toggle="tooltip" data-bs-title="Em breve" class="opacity-50" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Apresentação do programa:</h6> <a href="https://docs.google.com/presentation/d/1PPZ8IKlgo4vm2UqGxArpqcYfYAjsggZcxYtduICq_rg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Descrição do programa:</h6> <a href="https://docs.google.com/document/d/1GVgtlg55EFydis_5a_hjIIH2gg058iVstDUeRHTAhWE/edit" target="_blank" rel="noopener noreferrer" download=""><i class="ms-1 fa fa-download "></i></a></div>
               </div>
             </div>
           </div>
@@ -93,15 +93,31 @@
           <div class="swiper-button-prev"></div>
         </div>
 
-        <a href="/#s-about" class="btn btn-success btn-rounded mt-2"> Cadastrar condomínio</a>
+        <a href="/areadocondominio" class="btn btn-success btn-rounded mt-2"> Espaço condomínio</a>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container s-about__colFlux">
     <h2 class="d-flex justify-content-center text-cGreen my-5 py-3">Como funciona?</h2>
-    <div class="row d-flex justify-content-center mb-4">
+    <div class="row d-flex justify-content-center">
+      <div class="col-3 d-flex align-items-center justify-content-center">
+        <p class="text-center s-about__colFlux--description">1- A coleta dos recicláveis é realizada conforme o agendamento</p>
+      </div>
       <div class="col-3">
-        <p>Condomínio cadastra-se no Recicla Mais</p>
+        <p class="text-center s-about__colFlux--description">
+          2- A equipe da PMF valida o cadastro do condomínio, <br> 
+          e informar sobre o agendamento da coleta
+        </p>
+      </div>
+      <div class="col-3">
+        <p class="text-center s-about__colFlux--description">
+         3-  O condomínio recebe a visita do agente ambiental para entrega <br>
+          do kit coleta seletiva e orientações sobre a separação dos recicláveis
+        </p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center mb-4">
+      <div class="col-3 text-center">
         <img
           src="{% static 'images/icon-building.png' %}"
           class="img-fluid s-about__colImg--img"
@@ -110,10 +126,6 @@
         />
       </div>
       <div class="col-3 text-center">
-        <p class="text-center">
-          A equipe da PMF valida o cadastro do condomínio, <br> 
-          e informar sobre o agendamento da coleta
-        </p>
         <img
           src="{% static 'images/icon-team.png' %}"
           class="img-fluid s-about__colImg--img"
@@ -121,11 +133,7 @@
           width="190"
         />
       </div>
-      <div class="col-3">
-        <p class="text-center">
-          O condomínio recebe a visita do agente ambiental para entrega <br>
-          do kit coleta seletiva e orientações sobre a separação dos recicláveis
-        </p>
+      <div class="col-3 text-center">
         <img
           src="{% static 'images/icon-coleta.png' %}"
           class="img-fluid s-about__colImg--img"
@@ -135,8 +143,17 @@
       </div>
     </div>
     <div class="row d-flex justify-content-center">
+      <div class="col-3 text-center mt-3">
+        <p class="text-center s-about__colFlux--description">
+          4- A coleta dos recicláveis é realizada conforme o agendamento 
+        </p>
+      </div>
+      <div class="col-3 text-center">
+        <p class="text-center s-about__colFlux--description">5- A coleta dos recicláveis é realizada conforme o agendamento</p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
       <div class="col-3">
-        <p class="text-center">A coleta dos recicláveis é realizada conforme o agendamento</p>
         <img
           src="{% static 'images/icons-caminhao.png' %}"
           class="img-fluid s-about__colImg--img"
@@ -145,7 +162,6 @@
         />
       </div>
       <div class="col-3 text-center">
-        <p class="text-center">A coleta dos recicláveis é realizada conforme o agendamento</p>
         <img
           src="{% static 'images/icon-money.png' %}"
           class="img-fluid s-about__colImg--img"
@@ -181,7 +197,7 @@
               <div class="d-flex  align-items-center s-coleta__card bg-white">
                 <div class="s-coleta__card--leftIntro">
                   <h4 class="text-cGreen">Plástico</h4>
-                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                  <img src="{% static 'images/plastic.png' %}" alt="icone de coleta plástico" width="50">
                 </div>
                 <div class="s-coleta__card--rightDescription">
                   <ul>
@@ -197,7 +213,7 @@
               <div class="d-flex  align-items-center s-coleta__card bg-white">
                 <div class="s-coleta__card--leftIntro">
                   <h4 class="text-cGreen">Papel</h4>
-                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                  <img src="{% static 'images/paper.png' %}" alt="icone de coleta plástico" width="50">
                 </div>
                 <div class="s-coleta__card--rightDescription">
                   <ul>
@@ -213,7 +229,7 @@
               <div class="d-flex  align-items-center s-coleta__card bg-white">
                 <div class="s-coleta__card--leftIntro">
                   <h4 class="text-cGreen">Vidro</h4>
-                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                  <img src="{% static 'images/glass.png' %}" alt="icone de coleta plástico" width="50">
                 </div>
                 <div class="s-coleta__card--rightDescription">
                   <ul>
@@ -227,7 +243,7 @@
               <div class="d-flex  align-items-center s-coleta__card bg-white">
                 <div class="s-coleta__card--leftIntro">
                   <h4 class="text-cGreen">Metal</h4>
-                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                  <img src="{% static 'images/metal.png' %}" alt="icone de coleta plástico" width="50">
                 </div>
                 <div class="s-coleta__card--rightDescription">
                   <ul>
@@ -243,7 +259,7 @@
               <div class="d-flex  align-items-center s-coleta__card bg-white">
                 <div class="s-coleta__card--leftIntro">
                   <h4 class="text-cGreen">Outro</h4>
-                  <img src="{% static 'images/015-reuso.png' %}" alt="icone de coleta plástico" width="50">
+                  <img src="{% static 'images/other.png' %}" alt="icone de coleta plástico" width="50">
                 </div>
                 <div class="s-coleta__card--rightDescription">
                   <ul>
@@ -296,7 +312,7 @@
         </div>
         <div class="swiper-slide">
           <div class="s-programas__card card-reciclo">
-            <img src="{% static 'images/re-ciclo_comunicação-05.png' %}"width="120" alt="" class="mx-auto mb-2">
+            <img src="{% static 'images/re-ciclo_comunicação-05.png' %}"width="120" alt="" class="mx-auto mb-2 bg-cOrange rounded">
             <div class="card-body">
               <h6 class="card-title my-2">
                 Coleta seletiva porta a porta, inclusiva e com baixa emissão de carbono
@@ -348,11 +364,7 @@
 <!-- Parceiros-->
 <section id="anchorPar" class="s-content s-parceiros">
   <div class="container">
-      <div class="row mb-5">
-          <div class="col">
-              <h2 class="text-center mb-4 text-cGreen fs-1">Parceiros</h2>
-          </div>
-      </div>
+    <h2 class="d-flex justify-content-center text-cGreen mb-4">Parceiros</h2>
       <div class="row d-flex justify-content-center">
 
         <div class="col-6 col-lg-3 s-parceiros__block">
@@ -366,7 +378,7 @@
             </a>
         </div>
         <div class="col-6 col-lg-3 s-parceiros__block">
-          <a href="" target="_blank">
+          <a href="" target="_blank" class="pe-none">
               <img src="{% static 'images/logo-redecatadores.jpg' %}" alt="logo parceiro" class="mb-3 img-fluid">
             </a>
         </div>
