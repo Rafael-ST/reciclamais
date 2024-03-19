@@ -53,14 +53,14 @@ class Condominio(BaseModel):
     bairro = models.ForeignKey('Bairro', verbose_name="Bairro", on_delete=models.PROTECT)
     ponto_referencia = models.CharField(verbose_name='Qual ponto de referência do condomínio?', max_length=150, null=True, blank=True)
     identificador = models.IntegerField(verbose_name='Identificador', default=0)
-    dias_semana = models.CharField(verbose_name='Dias da Semana', max_length=10, null=True)
-    zelador = models.CharField(verbose_name='Nome do Zelador', max_length=100, null=True, blank=True)
+    # dias_semana = models.CharField(verbose_name='Dias da Semana', max_length=10, null=True)
+    # zelador = models.CharField(verbose_name='Nome do Zelador', max_length=100, null=True, blank=True)
     bonificacao = models.CharField(verbose_name='Bonificação', max_length=50, null=True, choices=BONIFICACAO)
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if self.dias_semana:
-            self.dias_semana = eval(self.dias_semana)
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     if self.dias_semana:
+    #         self.dias_semana = eval(self.dias_semana)
 
     def __str__(self):
         return self.nome
