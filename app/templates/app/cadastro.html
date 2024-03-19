@@ -14,7 +14,7 @@
                 dar mais informações sobre sua coleta. <br>
                  O prazo máximo de espera para o retorno é de até 48 horas.
             </div>
-          </div>
+        </div>
         <div class="card card-form">
             <form method="POST" action="" 
             id="msform" class="post-form formMain formMainFisica form formAtuaDados needs-validation">
@@ -30,220 +30,194 @@
                     <fieldset>
                         <div class="form-card">
                             <!-- formulario pessal core-->
-
-                            <h3 class="text-cGreen">Dados do condomínio</h3>
-                            <hr>
-            
-                            <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-9">
-                                    {{ form.cnpj_condominio|as_crispy_field }}
+                            <div class="mb-4">
+                                <div class="alert alert-success d-flex align-items-center my-3" role="alert">
+                                    <h3 class="text-cGreen">Dados do condomínio</h3>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-12 position-relative div-password">
-                                    {{ form.senha|as_crispy_field }}
-                                    <i class="fa fa-eye position-absolute eye-password" aria-hidden="true"></i>
-                                    <p class="error-message" id="error"></p>
+                
+                                <p class>Preencha os campos obrigatórios <span class="text-danger">*</span></p>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-9">
+                                        {{ form.cnpj_condominio|as_crispy_field }}
+                                    </div>
                                 </div>
-                                <div class="col-lg-4 col-md-12 position-relative div-password2">
-                                    {{ form.senha2|as_crispy_field }}
-                                    <i class="fa fa-eye position-absolute eye-password2" aria-hidden="true"></i>
-                                    <p class="error-message" id="error2"></p>
-                                </div>
-                                <div class="col-lg-4 col-md-12 alert-message d-none">
-                                    <div class="alert-message mt-3">
-                                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                            <i class="text-danger fa fa-alert"></i>
-                                            <div id="error-confirm-password">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-12 position-relative div-password">
+                                        {{ form.senha|as_crispy_field }}
+                                        <i class="fa fa-eye position-absolute eye-password" aria-hidden="true"></i>
+                                        <p class="error-message" id="error"></p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 position-relative div-password2">
+                                        {{ form.senha2|as_crispy_field }}
+                                        <i class="fa fa-eye position-absolute eye-password2" aria-hidden="true"></i>
+                                        <p class="error-message" id="error2"></p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 alert-message d-none">
+                                        <div class="alert-message mt-3">
+                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                                <i class="text-danger fa fa-alert"></i>
+                                                <div id="error-confirm-password">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.nome|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.email|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-2 col-md-2">
-                                    {{ form.ddd|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-4 col-md-10">
-                                    {{ form.telefone|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-3 col-md-12">
-                                    {{ form.whatsapp|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div  class="col-lg-3 mb-3">
-                                    <label class="form-label requiredField">
-                                       Existe zelador?<span class="asteriskField">*</span>
-                                    </label>
-                                    <div class="chiller_cb">
-                                       <div class="form-check form-check-inline div_radioZelador1">
-                                          <input type="radio" class="form-check-input" 
-                                          name="existeZelador" value="0" id="zeladorInline" required="">
-                                          <label for="zeladorInline" class="form-check-label text-black">
-                                             Sim
-                                          </label>
-                                       </div>
-                                       <div class="form-check form-check-inline div_radioZelador0">
-                                          <input type="radio" class="form-check-input" name="existeZelador" 
-                                          value="0" id="zeladorInline2" required="">
-                                          <label for="zeladorInline2" class="form-check-label text-black">
-                                             Não
-                                          </label>
-                                       </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.nome|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.email|as_crispy_field }}
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12 d-none" id="div_zelador">
-                                    {{ form.zelador|as_crispy_field }}
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2">
+                                        {{ form.ddd|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-4 col-md-10">
+                                        {{ form.telefone|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-3 col-md-12">
+                                        {{ form.whatsapp|as_crispy_field }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-9">
-                                    {{ form.qtd_habitacional|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label requiredField">
-                                            Dias da semana?<span class="asteriskField">*</span>
-                                         </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                       <input type="checkbox" class="form-check-input" 
-                                       name="dias_semana" value="0" id="id_dias_semana_0">
-                                       <label for="id_dias_semana_0" class="form-check-label text-black">
-                                       SEG
-                                       </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="1" id="id_dias_semana_1">
-                                       <label for="id_dias_semana_1" class="form-check-label text-black">
-                                       TER
-                                       </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="2" id="id_dias_semana_2">
-                                       <label for="id_dias_semana_2" class="form-check-label text-black">
-                                       QUA
-                                       </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="3" id="id_dias_semana_3">
-                                       <label for="id_dias_semana_3" class="form-check-label text-black">
-                                       QUI
-                                       </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="4" id="id_dias_semana_4">
-                                       <label for="id_dias_semana_4" class="form-check-label text-black">
-                                       SEX
-                                       </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                       <input type="checkbox" class="form-check-input" name="dias_semana" value="5" id="id_dias_semana_5">
-                                       <label for="id_dias_semana_5" class="form-check-label text-black">
-                                       SAB
-                                       </label>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-9">
+                                        {{ form.qtd_habitacional|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
 
-                            <h3 class="text-cGreen">Dados endereço do condomínio</h3>
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-lg-3 col-md-12">
-                                    {{ form.cep|as_crispy_field }}
+                            <div class="mb-4">
+                                <div class="alert alert-success d-flex align-items-center my-3" role="alert">
+                                    <h3 class="text-cGreen">Dados endereço do condomínio</h3>
                                 </div>
-                                <div class="col-lg-7 col-md-12">
-                                    {{ form.logradouro|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-2 col-md-12">
-                                    {{ form.numero|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-4 col-md-12">
-                                    {{ form.complemento|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-3 col-md-12">
-                                    {{ form.bairro|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-12">
-                                    {{ form.ponto_referencia|as_crispy_field }}
-                                </div>
-                            </div>
-
-                            <h3 class="text-cGreen">Dados de bonificação</h3>
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12 mb-3">
-                                    <div>
-                                        <label class="form-label requiredField">
-                                            Aceita participar do programa de bonificação?<span class="asteriskField">*</span>
-                                         </label>
+    
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12">
+                                        {{ form.cep|as_crispy_field }}
                                     </div>
-                                    <div class="form-check form-check-inline" id="idBonificao0">
-                                       <input type="radio" class="form-check-input" name="bonificacao" value="0" id="id_bonificacao_0" required="" data-gtm-form-interact-field-id="2">
-                                       <label for="id_bonificacao_0" class="form-check-label text-black">
-                                        Desejo participar do programa de bonificação
-                                       </label>
+                                    <div class="col-lg-7 col-md-12">
+                                        {{ form.logradouro|as_crispy_field }}
                                     </div>
-                                    <div class="form-check form-check-inline" id="idBonificao1">
-                                       <input type="radio" class="form-check-input" name="bonificacao" value="1" id="id_bonificacao_1" required="" data-gtm-form-interact-field-id="3">
-                                       <label for="id_bonificacao_1" class="form-check-label text-black">
-                                        Desejo doar os recicláveis para associações de catadores abrindo mão da bonificação
-                                       </label>
+                                    <div class="col-lg-2 col-md-12">
+                                        {{ form.numero|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        {{ form.complemento|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-3 col-md-12">
+                                        {{ form.bairro|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-12">
+                                        {{ form.ponto_referencia|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
 
-                            <div id="div_bonificacao" class="row div_bonificacao">
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.tipo_pix|as_crispy_field }}
+                            <div class="mb-4">
+                                <div class="alert alert-success d-flex align-items-center my-3" role="alert">
+                                    <h3 class="text-cGreen">Destinação dos recicláveis e recursos</h3>
                                 </div>
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.chave_pix|as_crispy_field }}
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="alert alert-info d-flex align-items-center my-3 fw-normal" role="alert">
+                                            <div>
+                                                <i class="fa fa-bell text-primary" aria-hidden="true"></i>
+                                                <em class="text-primary">Seus dados bancários serão compartilhados com a instituição que 
+                                                    efetuará o pagamento referente a sua bonificação.</em>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-warning fs-6 text-cOrange fw-normal">
+                                            <div>
+                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                                <em class="fs-6">
+                                                    Para Receber sua bonificação seus resíduos deverão estar separados em sacolas diferentes por tipo (plástico, papel, metal e vidro); 
+                                                </em>
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                                <em class="fs-6">
+                                                    Para Doar para os catadores seus recicláveis podem estar 
+                                                    todos juntos na mesma sacola.                                       
+                                                 </em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div>
+                                            <label class="form-label requiredField">
+                                                Aceita participar do programa de bonificação?<span class="asteriskField">*</span>
+                                             </label>
+                                        </div>
+                                        <div class="form-check" id="idBonificao0">
+                                           <input type="radio" class="form-check-input" name="bonificacao" value="0" id="id_bonificacao_0" required="" data-gtm-form-interact-field-id="2">
+                                           <label for="id_bonificacao_0" class="form-check-label text-black">
+                                            Desejo participar do programa de bonificação
+                                           </label>
+                                        </div>
+                                        <div class="form-check" id="idBonificao1">
+                                           <input type="radio" class="form-check-input" name="bonificacao" value="1" id="id_bonificacao_1" required="" data-gtm-form-interact-field-id="3">
+                                           <label for="id_bonificacao_1" class="form-check-label text-black">
+                                            Desejo doar os recicláveis para associações de catadores abrindo mão da bonificação
+                                           </label>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div id="div_bonificacao" class="row div_bonificacao">
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.tipo_pix|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.chave_pix|as_crispy_field }}
+                                    </div>
                                 </div>
                             </div>
 
-                            <h3 class="text-cGreen">Dados do responsável</h3>
-                            <hr>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.responsavel|as_crispy_field }}
+                            <div class="mb-4">
+                                <div class="alert alert-success d-flex align-items-center my-3" role="alert">
+                                    <h3 class="text-cGreen">Dados do responsável</h3>
                                 </div>
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.nome_responsavel|as_crispy_field }}
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    {{ form.contato_responsavel|as_crispy_field }}
+                                <hr>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.responsavel|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.nome_responsavel|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        {{ form.contato_responsavel|as_crispy_field }}
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-12">
-                                    {{ form.observacao|as_crispy_field }}
+                            <div class="mb-4">
+                                <div class="alert alert-success d-flex align-items-center my-3" role="alert">
+                                    <h3 class="text-cGreen">Observações Gerais e Termos de Uso</h3>
                                 </div>
-                                <div class="col-lg-4 col-md-12">
-                                    {{ form.indicacao|as_crispy_field }}
-                                </div>
-
-                                <div class="col-12">
-                                    <input class="form-check-input" type="checkbox" value="" id="checkTermos">
-                                    <label class="form-check-label" for="checkTermos">
-                                      Li e Aceito os <a href="#" class="linkLista" data-bs-toggle="modal" data-bs-target="#exampleModal">Termos de Uso</a>
-                                    </label>
-                                    <span></span>
+                                <div class="row">
+                                    <div class="col-12">
+                                        {{ form.observacao|as_crispy_field }}
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        {{ form.indicacao|as_crispy_field }}
+                                    </div>
+    
+                                    <div class="col-12">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkTermos">
+                                        <label class="form-check-label" for="checkTermos">
+                                          Li e Aceito os <a href="#" class="linkLista" data-bs-toggle="modal" data-bs-target="#exampleModal">Termos de Uso</a>
+                                        </label>
+                                        <span></span>
+                                    </div>
                                 </div>
                             </div>
 

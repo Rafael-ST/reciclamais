@@ -11,8 +11,9 @@ class ContatoForm(forms.Form):
 class CondominioForm(forms.ModelForm):
     senha = forms.CharField(max_length=100, widget=forms.PasswordInput)
     senha2 = forms.CharField(max_length=100, widget=forms.PasswordInput, label='Confirme sua senha' )
-    dias_semana = forms.MultipleChoiceField(choices=DIAS_SEMANA, widget=forms.CheckboxSelectMultiple)
+    # dias_semana = forms.MultipleChoiceField(choices=DIAS_SEMANA, widget=forms.CheckboxSelectMultiple)
     bonificacao = forms.ChoiceField(widget=forms.RadioSelect, choices=BONIFICACAO, label='Aceita participar do programa de bonificação?')
+    observacao = forms.CharField(label='Gostaria de deixar alguma observação adicional?', widget=forms.Textarea(attrs={'placeholder': 'Sua observação aqui'}), required=False)
     class Meta:
         model = Condominio
         exclude = (
