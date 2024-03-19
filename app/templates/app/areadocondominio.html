@@ -17,19 +17,19 @@
 <section class="my-5">
         {% comment %} <div class="d-flex justify-content-center align-items-center"> <span class="cadastro-alert p-5 m-5 rounded-3">Para participar você precisa fazer o cadastro do seu condomínio</span></div> {% endcomment %}
         <div class="d-flex flex-column flex-md-row justify-content-center align-items-center align-items-md-end gap-5">
-                <a href="/cadastro" class="text-decoration-none">
+                <a href="/cadastro" class="text-decoration-none d-flex justify-content-center width100md">
                         <div class="condominio-link rounded-4 border-start border-5 border-cGreen shadow d-flex flex-column justify-content-center align-items-center px-2">
-                                <img class="mb-2 p-2" src="{% static 'images/cadastro_icon.png' %}" alt="icone de cadastro" width="100" />
-                                <span class="text-cGreen text-center lh-sm">Ainda não é cadastrado?<br> Cadastre seu condomínio</span>
+                                <img class="my-2 p-2" src="{% static 'images/cadastro_icon.png' %}" alt="icone de cadastro" width="100" />
+                                <span class="text-cGreen text-center lh-sm mb-2">Ainda não é cadastrado?<br> Cadastre seu condomínio</span>
                         </div>
                 </a>
                 <div data-bs-toggle="tooltip" data-bs-title="Em breve" class="condominio-link-center opacity-50 rounded-4 border-start border-5 border-cOrange shadow d-flex flex-column justify-content-center align-items-center px-2">
-                        <img class="mb-2 p-2" src="{% static 'images/login_icon.png' %}" alt="icone de login" width="100" />
-                        <span class="text-center lh-sm">Já é cadastrado?<br> Faça login e acesse suas informações</span>
+                        <img class="my-2 p-2" src="{% static 'images/login_icon.png' %}" alt="icone de login" width="100" />
+                        <span class="text-center lh-sm mb-2">Já é cadastrado?<br> Faça login e acesse suas informações</span>
                 </div>
                 <div id="materials" class="condominio-link rounded-4 border-start border-5 border-cGreen shadow d-flex flex-column justify-content-center align-items-center px-2">
-                        <img class="mb-2 p-2" src="{% static 'images/download.png' %}" alt="icone de download" width="100" />
-                        <span class="text-cGreen text-center lh-sm">Baixe os materiais<br> sobre o programa</span>
+                        <img class="my-2 p-2" src="{% static 'images/download.png' %}" alt="icone de download" width="100" />
+                        <span class="text-cGreen text-center lh-sm mb-2">Baixe os materiais<br> sobre o programa</span>
                 </div>
         </div>
 </section>
