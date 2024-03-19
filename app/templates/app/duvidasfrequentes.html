@@ -13,7 +13,9 @@
             <h2 class="accordion-header">
               <button class="accordion-button rounded-4 shadow bg-white text-cOrange border-start border-5 border-cOrange" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-{{ forloop.counter0 }}" aria-expanded="true" aria-controls="panelsStayOpen-{{ forloop.counter0 }}">
                 <div class="d-flex justify-content-between w-100">
-                  <div>{{ duvida.pergunta }}</div>
+                  <div>
+                    {{ duvida.pergunta }}
+                  </div>
                   <div>
                     <img class="accordion-arrow-img" src="{% static 'images/accordion-arrow.png' %}" alt="seta" />
                   </div>
@@ -21,11 +23,18 @@
               </button>
             </h2>
             <div id="panelsStayOpen-{{ forloop.counter0 }}" class="accordion-collapse collapse {% if  forloop.counter0 == 0%}show{% endif %}">
-              <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">{{ duvida.resposta }}</div>
+              <div class="accordion-body bg-cOrange rounded-4 text-white shadow negative-body">
+                {{ duvida.resposta }}
+              </div>
             </div>
           </div>
         {% endfor %}
       {% endif %}
+
+      <div id="accordion-container">
+
+      </div>
+      
 
     </div>
   </div>

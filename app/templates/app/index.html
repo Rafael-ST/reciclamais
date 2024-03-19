@@ -36,9 +36,9 @@
           </h2> -->
           <p class="text-black lead mt-4">
             Plataforma para conectar  condomínios  <br />a
-            Reciclagem , deixando nossa cidade mais limpa
+            Reciclagem , deixando nossa cidade mais limpa, <a href="/#s-about" class="text-cGreen"> Saiba mais</a>
           </p>
-          <a href="/#s-about" class="btn btn-success btn-rounded mt-2"> Saiba mais</a>
+          <a href="/cadastro" class="btn btn-success btn-rounded mt-2"> Cadastrar condomínio</a>
         </div>
       </div>
     </div>
@@ -82,9 +82,15 @@
                 Materiais do programa
               </h4>
               <div class="mt-5 w-75 mx-auto">
-                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Folder para moradores:</h6> <a href=""  target="_blank" rel="noopener noreferrer"  data-bs-toggle="tooltip" data-bs-title="Em breve" class="opacity-50" download=""><i class="ms-1 fa fa-download "></i></a></div>
-                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Apresentação do programa:</h6> <a href="https://docs.google.com/presentation/d/1PPZ8IKlgo4vm2UqGxArpqcYfYAjsggZcxYtduICq_rg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" download=""><i class="ms-1 fa fa-download "></i></a></div>
-                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Descrição do programa:</h6> <a href="https://docs.google.com/document/d/1GVgtlg55EFydis_5a_hjIIH2gg058iVstDUeRHTAhWE/edit" target="_blank" rel="noopener noreferrer" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Folder para moradores:</h6> 
+                  <a href=""  target="_blank" rel="noopener noreferrer"  data-bs-toggle="tooltip" data-bs-title="Em breve" class="opacity-50" download=""><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Apresentação do programa:</h6> 
+                  <a 
+                  href="{% static 'images/Recicla Mais Condomínios_Prefeitura de Fortaleza.pdf' %}" 
+                  download><i class="ms-1 fa fa-download "></i></a></div>
+                <div class="s-about__colSwiper--lista d-flex justify-content-between"><h6>Descrição do programa:</h6> 
+                  <a href="{% static 'images/PROGRAMA RECICLA MAIS - PREFEITURA DE FORTALEZA.pdf' %}" 
+                  download><i class="ms-1 fa fa-download "></i></a></div>
               </div>
             </div>
           </div>
@@ -93,7 +99,7 @@
           <div class="swiper-button-prev"></div>
         </div>
 
-        <a href="/areadocondominio" class="btn btn-success btn-rounded mt-2"> Espaço condomínio</a>
+        <a href="/cadastro" class="btn btn-success btn-rounded mt-2"> Cadastrar condomínio</a>
       </div>
     </div>
   </div>
